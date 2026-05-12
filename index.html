@@ -5,7 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>東京案内書 | Tokyo Travel</title>
+  <title>東京案内書｜池袋・目白・東京観光ガイド</title>
+
+  <!-- SEO -->
+  <meta name="description" content="東京案内書は池袋と目白を紹介する東京旅行ガイドサイトです。観光スポット、文化、グルメ情報を掲載しています。">
+  <meta name="author" content="NTAT">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="東京案内書 | Tokyo Travel">
+  <meta property="og:description" content="池袋と目白を紹介する東京観光ガイド">
+  <meta property="og:image" content="image/1.jpg">
+  <meta property="og:type" content="website">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +54,6 @@
     }
 
     /* NAVBAR */
-
     nav {
       position: fixed;
       top: 0;
@@ -80,7 +90,6 @@
     }
 
     /* HERO */
-
     .hero {
       height: 100vh;
       background:
@@ -120,8 +129,6 @@
       transform: translateY(-5px);
     }
 
-    /* TITLE */
-
     .title {
       text-align: center;
       margin-bottom: 60px;
@@ -136,8 +143,6 @@
       color: #777;
       font-size: 18px;
     }
-
-    /* ABOUT TOKYO */
 
     .about {
       display: grid;
@@ -161,8 +166,6 @@
       line-height: 2;
       font-size: 17px;
     }
-
-    /* PLACE SECTION */
 
     .place {
       display: grid;
@@ -208,25 +211,6 @@
       color: black;
     }
 
-    /* GALLERY */
-
-    .gallery {
-      columns: 3 250px;
-      column-gap: 15px;
-    }
-
-    .gallery img {
-      margin-bottom: 15px;
-      border-radius: 20px;
-      transition: 0.4s;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.03);
-    }
-
-    /* FOOTER */
-
     footer {
       background: #111;
       color: white;
@@ -243,322 +227,81 @@
       color: #bbb;
       line-height: 1.8;
     }
-
-    /* ANIMATION */
-
-    .fade {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: 1s;
-    }
-
-    .fade.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* RESPONSIVE */
-
-    @media(max-width:768px) {
-
-      nav {
-        padding: 18px 5%;
-      }
-
-      nav ul {
-        gap: 15px;
-      }
-
-      section {
-        padding: 80px 5%;
-      }
-
-      .hero-content h2 {
-        font-size: 50px;
-      }
-
-      .hero-content p {
-        font-size: 18px;
-      }
-
-      .title h2 {
-        font-size: 35px;
-      }
-
-      .place-content h3 {
-        font-size: 35px;
-      }
-    }
-    /* NAVIGATION */
-
-.page-navigation{
-  width:90%;
-  max-width:1200px;
-  margin:70px auto;
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  flex-wrap:wrap;
-}
-
-.nav-btn{
-  position:relative;
-  padding:16px 38px;
-  border-radius:50px;
-  text-decoration:none;
-  font-size:18px;
-  font-weight:bold;
-  color:white;
-
-  background:linear-gradient(135deg,#e8e8e8,#f3caca);
-
-  box-shadow:
-    0 8px 20px rgba(0,0,0,0.2),
-    inset 0 1px 1px rgba(255,255,255,0.2);
-
-  transition:all 0.35s ease;
-
-  overflow:hidden;
-}
-
-.nav-btn::before{
-  content:"";
-  position:absolute;
-  top:0;
-  left:-100%;
-  width:100%;
-  height:100%;
-
-  background:rgba(255,255,255,0.2);
-
-  transform:skewX(-25deg);
-  transition:0.6s;
-}
-
-.nav-btn:hover::before{
-  left:120%;
-}
-
-.nav-btn:hover{
-  transform:translateY(-6px) scale(1.05);
-
-  box-shadow:
-    0 15px 30px rgba(0,0,0,0.3);
-}
-
-.nav-btn:active{
-  transform:scale(0.96);
-}
   </style>
 </head>
 
 <body>
 
   <!-- NAVBAR -->
-
   <nav>
-
-    <h1>東京案内書</h1>
-
+    <h1>東京案内書 - 通信記者NTAT</h1>
     <ul>
       <li><a href="#home">HOME</a></li>
       <li><a href="#tokyo">TOKYO</a></li>
       <li><a href="#places">PLACES</a></li>
       <li><a href="#gallery">GALLERY</a></li>
     </ul>
-
   </nav>
 
   <!-- HERO -->
-
   <section class="hero" id="home">
-
-    <div class="hero-content fade">
-
+    <div class="hero-content">
       <h2>TOKYO TRAVEL</h2>
       <a href="#tokyo">Explore Tokyo</a>
-
     </div>
-
   </section>
 
   <!-- TOKYO -->
-
   <section id="tokyo">
-
-    <div class="title fade">
-
+    <div class="title">
       <h2>東京について</h2>
-
-      <p>
-        私の目から見た東京
-      </p>
-
+      <p>私の目から見た東京</p>
     </div>
 
     <div class="about">
-
-      <img src="image/40.jpg" class="fade">
-
-      <div class="about-text fade">
-
-        <h3>東京へようこそいらっしゃいました🌸</h3>
-
+      <img src="image/40.jpg" alt="東京の風景">
+      <div class="about-text">
+        <h3>東京へようこそ🌸</h3>
         <p>
-          東京は、にぎやかな都会と静かな自然が共存する特別な場所です。
-          池袋では東京らしいエネルギーと夜景を感じることができ、
-          目白では静かな庭園と落ち着いた雰囲気を楽しむことができます。
-          このウェブサイトでは、私が実際に訪れた東京の魅力を紹介します。
+          東京はにぎやかな都会と静かな自然が共存する特別な場所です。
         </p>
-
       </div>
-
     </div>
-
   </section>
 
   <!-- PLACES -->
-
   <section id="places">
 
-    <div class="title fade">
-
+    <div class="title">
       <h2>観光スポット</h2>
-
-      <p>
-        東京でのお気に入りの場所
-      </p>
-
+      <p>東京でのお気に入りの場所</p>
     </div>
 
-    <!-- IKEBUKURO -->
-
     <div class="place">
-
-      <img src="image/41.jpg" class="fade">
-
-      <div class="place-content fade">
-
-        <h3>🌆 池袋</h3>
-
-        <p>
-          池袋は東京を代表する人気エリアです。
-          夜になるとネオンと街の光がとても美しく、
-          ショッピングや食事を楽しむことができます。
-        </p>
-
-       <a href="ikebukuro.html" class="btn">もっと見る</a>
-
+      <img src="image/41.jpg" alt="池袋の夜景">
+      <div class="place-content">
+        <h3>池袋</h3>
+        <p>池袋は東京を代表する人気エリアです。</p>
+        <a href="ikebukuro.html" class="btn">もっと見る</a>
       </div>
-
     </div>
 
-    <!-- MEJIRO -->
-
     <div class="place">
-
-      <div class="place-content fade">
-
-        <h3>🌿 目白</h3>
-
-        <p>
-          目白は静かで落ち着いた雰囲気が魅力の場所です。
-          自然が多く、日本らしい庭園をゆっくり楽しむことができます。
-        </p>
-
+      <div class="place-content">
+        <h3>目白</h3>
+        <p>静かで自然が多い落ち着いた場所です。</p>
         <a href="mejiro.html" class="btn">もっと見る</a>
-
       </div>
-
-      <img src="image/43.jpg" class="fade">
-
+      <img src="image/43.jpg" alt="目白の庭園">
     </div>
 
   </section>
-  <!-- KANZO / SUMMARY -->
 
-<section id="kanzo">
-
-  <div class="title fade">
-
-    <h2>📝 感想</h2>
-
-  </div>
-
-  <div class="about">
-    <div class="about-text fade">
-
-      <p>
-        東京を旅行して感じたことは、都会のにぎやかさと自然の静けさが
-        とてもバランスよく共存しているということです。
-        池袋ではエネルギーと夜景を楽しみ、目白では落ち着いた雰囲気を感じました。
-        それぞれの場所には違った魅力があり、
-        写真スポット、ショッピング、グルメ、文化体験など
-        さまざまな楽しみ方ができました。
-      </p>
-      <p>特に、池袋駅に戻って見学できたことは、とても印象に残りました。 
-        ここは私たちが以前実習をした場所です。 
-        久しぶりに来たので、最初は少し道に迷ってしまいましたが、駅の案内表示を見ながら落ち着いて進み、
-         無事に目的の場所へ行くことができました。その時、実習のときのことを思い出し、少し懐かしい気持ちになりました。
-        </p>
-        <p>また、日本の文化についても学ぶことができました。 
-          鳥居や手水舎、神社などを通して、 
-          日本人の礼儀や心の考え方について知ることができ、とても勉強になりました。
-           この3日間の見学を通して、私は多くのことを学び、
-           実際の体験を通して自分の考え方も少し成長できたと思います。
-          </p>
-
-    </div>
-
-  </div>
-
-</section>
-  <!-- NAVIGATION BUTTON -->
-
-<div class="page-navigation">
-
-  <a href="ikebukuro.html" class="nav-btn">
-    次 ➜
-  </a>
-
-</div>
   <!-- FOOTER -->
-
   <footer>
-
     <h2>東京案内書</h2>
-
-    <p>
-      Ikebukuro & Mejiro Travel Website <br>
-      Made With ❤️ In Tokyo
-    </p>
-
+    <p>Ikebukuro & Mejiro Travel Website<br>Made With ❤️ In Tokyo</p>
   </footer>
 
-  <!-- SCRIPT -->
-
-  <script>
-
-    const fadeElements = document.querySelectorAll(".fade");
-
-    window.addEventListener("scroll", () => {
-
-      fadeElements.forEach(el => {
-
-        const position = el.getBoundingClientRect().top;
-
-        if (position < window.innerHeight - 100) {
-
-          el.classList.add("show");
-
-        }
-
-      });
-
-    });
-
-  </script>
-
 </body>
-
 </html>
