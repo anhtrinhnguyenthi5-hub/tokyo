@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anime Street | Tokyo Travel</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            background:
+                linear-gradient(to bottom,
+                    #f8fafc,
+                    #ffffff,
+                    #fff7f7);
+
+            color: #333;
+
+            line-height: 1.8;
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+
+            height: 90vh;
+
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            filter: brightness(65%);
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(to right,
+                    rgba(0, 0, 0, 0.7),
+                    rgba(0, 0, 0, 0.2));
+        }
+
+        .hero-text {
+            position: absolute;
+
+            top: 50%;
+            left: 8%;
+
+            transform: translateY(-50%);
+
+            z-index: 5;
+
+            color: white;
+        }
+
+        .hero-text h1 {
+
+            font-size: 90px;
+
+            letter-spacing: 8px;
+
+            margin-bottom: 20px;
+
+            font-weight: 900;
+        }
+
+        .hero-text p {
+
+            font-size: 24px;
+
+            color: #f1f1f1;
+        }
+
+        /* CONTAINER */
+
+        .container {
+            width: 90%;
+            max-width: 1300px;
+
+            margin: auto;
+
+            padding: 100px 0;
+        }
+
+        /* DESCRIPTION */
+
+        .description {
+
+            background: white;
+
+            padding: 70px;
+
+            border-radius: 35px;
+
+            margin-bottom: 90px;
+
+            box-shadow:
+                0 10px 35px rgba(0, 0, 0, 0.08);
+
+            text-align: center;
+        }
+
+        .description h2 {
+
+            font-size: 48px;
+
+            margin-bottom: 30px;
+
+            color: #111;
+        }
+
+        .description p {
+
+            font-size: 18px;
+
+            color: #666;
+
+            margin-bottom: 15px;
+        }
+
+        /* GALLERY */
+
+        .gallery {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(320px, 1fr));
+
+            gap: 35px;
+
+            margin-bottom: 100px;
+        }
+
+        .gallery-card {
+
+            background: white;
+
+            border-radius: 28px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.08);
+
+            transition: 0.4s;
+        }
+
+        .gallery-card:hover {
+
+            transform:
+                translateY(-10px);
+        }
+
+        .gallery-item {
+
+            position: relative;
+
+            overflow: hidden;
+
+            height: 280px;
+        }
+
+        .gallery-item img {
+
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img {
+
+            transform: scale(1.08);
+        }
+
+        /* OVERLAY */
+
+        .overlay {
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(to top,
+                    rgba(0, 0, 0, 0.85),
+                    rgba(0, 0, 0, 0.1));
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: flex-end;
+
+            padding: 25px;
+
+            opacity: 0;
+
+            transition: 0.4s;
+        }
+
+        .gallery-item:hover .overlay {
+
+            opacity: 1;
+        }
+
+        .overlay h3 {
+
+            color: white;
+
+            font-size: 30px;
+
+            margin-bottom: 10px;
+        }
+
+        .overlay p {
+
+            color: #eee;
+        }
+
+        .gallery-caption {
+
+            padding: 25px;
+
+            color: #666;
+
+            font-size: 15px;
+
+            line-height: 1.9;
+        }
+
+        /* INFO + MAP */
+
+        .info-map {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1.3fr;
+
+            gap: 40px;
+
+            align-items: stretch;
+
+            margin-bottom: 100px;
+        }
+
+        .info-box {
+
+            background: white;
+
+            padding: 50px;
+
+            border-radius: 35px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.08);
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+        .info-box h3 {
+
+            font-size: 42px;
+
+            margin-bottom: 30px;
+        }
+
+        .info-box p {
+
+            font-size: 18px;
+
+            color: #555;
+
+            margin-bottom: 25px;
+
+            line-height: 1.9;
+        }
+
+        .map-box iframe {
+
+            width: 100%;
+
+            height: 100%;
+
+            min-height: 450px;
+
+            border: none;
+
+            border-radius: 35px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* BUTTONS */
+
+        .page-navigation {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 30px;
+
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+
+            padding: 16px 38px;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            color: white;
+
+            background:
+                linear-gradient(135deg,
+                    #8b5cf6,
+                    #ec4899);
+
+            box-shadow:
+                0 10px 25px rgba(140, 90, 255, 0.25);
+
+            transition: 0.4s;
+        }
+
+        .nav-btn:hover {
+
+            transform:
+                translateY(-5px) scale(1.05);
+        }
+
+        /* FOOTER */
+
+        footer {
+
+            margin-top: 120px;
+
+            background: white;
+
+            padding: 40px;
+
+            text-align: center;
+
+            color: #777;
+
+            border-top:
+                1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:900px) {
+
+            .hero-text h1 {
+
+                font-size: 60px;
+            }
+
+            .hero-text p {
+
+                font-size: 18px;
+            }
+
+            .description {
+
+                padding: 40px;
+            }
+
+            .description h2 {
+
+                font-size: 36px;
+            }
+
+            .info-map {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <img src="image/9.jpg">
+
+        <div class="hero-text">
+
+            <h1>アニメ </h1>
+
+            <p>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CONTENT -->
+
+    <div class="container">
+
+        <!-- DESCRIPTION -->
+
+        <div class="description">
+
+            <h2>🎮 アニメ</h2>
+
+            <p>
+                🌳 木の温かい雰囲気で、ジブリの世界のようにデザインされています。
+            </p>
+
+            <p>
+                🎁 フィギュアやぬいぐるみ、コップ、キーホルダーなどのお土産を販売しています。
+            </p>
+
+            <p>
+                🎬 日本のアニメの世界に入ったような気分を味わうことができます。
+            </p>
+            <p>
+                📸 観光客の方が写真をたくさん撮れるかわいいスポットが多くございます。
+            </p>
+
+        </div>
+
+        <!-- GALLERY -->
+
+        <div class="gallery">
+
+            <!-- ITEM 1 -->
+
+            <div class="gallery-card">
+
+                <div class="gallery-item">
+
+                    <img src="image/55.jpg">
+
+                    <div class="overlay">
+
+                        <h3>📸 写真スポット</h3>
+
+                    </div>
+
+                </div>
+                <h3>📸 写真スポット</h3>
+
+                <div class="gallery-caption">
+
+                    東京には美しい写真スポットがたくさんあります。
+                    高いビルからの景色やネオンが輝く街並みなど、思い出に残る写真を撮ることができます。
+
+                </div>
+
+            </div>
+
+            <!-- ITEM 2 -->
+
+            <div class="gallery-card">
+
+                <div class="gallery-item">
+
+                    <img src="image/10.jpg">
+
+                    <div class="overlay">
+
+                        <h3>🛍️ ショッピングエリア</h3>
+
+                    </div>
+
+                </div>
+                <h3>🛍️ ショッピングエリア</h3>
+
+                <div class="gallery-caption">
+
+                    東京のショッピングエリアはとても多様です。
+                    大型ショッピングモールから小さな通りまであり、
+                    洋服・お土産・コスメ・家電など様々な商品を楽しむことができます。
+
+                </div>
+
+            </div>
+
+            <!-- ITEM 3 -->
+
+            <div class="gallery-card">
+
+                <div class="gallery-item">
+
+                    <img src="image/54.jpg">
+
+                    <div class="overlay">
+
+                        <h3>📚 マンガ・アニメショップ</h3>
+
+                    </div>
+
+                </div>
+                <h3>📚 マンガ・アニメショップ</h3>
+
+                <div class="gallery-caption">
+
+                    アニメやマンガが好きな人にとっては特別な場所です。
+                    漫画本、フィギュア、ポスターなど、たくさんのグッズがそろっていて、
+                    日本のポップカルチャーを感じることができます。
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- INFO + MAP -->
+
+        <section class="info-map">
+
+            <div class="info-box">
+
+                <h3>📍 情報</h3>
+
+                <p>
+                    <strong>場所:</strong><br>
+                    東京都豊島区池袋
+                </p>
+
+                <p>
+                    <strong>営業時間:</strong><br>
+                    10:00 - 21:00
+                </p>
+
+                <p>
+                    <strong>アクセス:</strong><br>
+                    池袋駅から徒歩約5分
+                </p>
+
+                <p>
+                    <strong>おすすめ:</strong><br>
+                    アニメ・マンガ・ゲーム
+                </p>
+
+            </div>
+
+            <div class="map-box">
+
+                <iframe src="https://www.google.com/maps?q=Ikebukuro+Anime+Tokyo&output=embed">
+                </iframe>
+
+            </div>
+
+        </section>
+
+        <!-- BUTTON -->
+
+        <div class="page-navigation">
+
+            <a href="sunshine.html" class="nav-btn">
+                ⬅ 戻る
+            </a>
+
+            <a href="food.html" class="nav-btn">
+                次へ ➜
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>© Tokyo Travel Guide</p>
+
+    </footer>
+
+</body>
+
+</html>

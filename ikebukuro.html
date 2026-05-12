@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>池袋 | 東京旅行</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:"Poppins","Noto Sans JP",sans-serif;
+      background:#f8f5f1;
+      overflow-x:hidden;
+      color:#222;
+    }
+
+    img{
+      width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    section{
+      padding:100px 10%;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:fixed;
+      top:0;
+      width:100%;
+      padding:20px 10%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      backdrop-filter:blur(12px);
+      background:rgba(0,0,0,0.15);
+      z-index:1000;
+    }
+
+    nav h1{
+      color:white;
+      font-size:28px;
+      font-weight:700;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:30px;
+    }
+
+    nav a{
+      color:white;
+      font-weight:500;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#ffd369;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:100vh;
+      background:
+      linear-gradient(
+        rgba(0,0,0,0.45),
+        rgba(0,0,0,0.55)
+      ),
+      url("image/41.jpg") center/cover;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+    }
+
+    .hero-content h2{
+      font-size:90px;
+      letter-spacing:5px;
+      margin-bottom:20px;
+    }
+
+    .hero-content p{
+      font-size:24px;
+      line-height:1.8;
+    }
+
+    /* TITLE */
+
+    .title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .title h2{
+      font-size:45px;
+      margin-bottom:15px;
+    }
+
+    .title p{
+      color:#777;
+      font-size:18px;
+    }
+
+    /* ABOUT */
+
+    .about{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:60px;
+      align-items:center;
+    }
+
+    .about img{
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .about-text h3{
+      font-size:42px;
+      margin-bottom:25px;
+    }
+
+    .about-text p{
+      color:#555;
+      line-height:2;
+      font-size:17px;
+      margin-bottom:20px;
+    }
+
+    /* PLACE */
+
+    .place{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:50px;
+      align-items:center;
+      margin-bottom:120px;
+    }
+
+    .place img{
+      border-radius:25px;
+      height:420px;
+      object-fit:cover;
+      transition:0.5s;
+    }
+
+    .place img:hover{
+      transform:scale(1.03);
+    }
+
+    .place-content h3{
+      font-size:42px;
+      margin-bottom:25px;
+    }
+
+    .place-content p{
+      color:#666;
+      line-height:2;
+      margin-bottom:30px;
+      font-size:17px;
+    }
+
+    /* BUTTON */
+
+    .btn{
+      display:inline-block;
+      padding:15px 38px;
+      border-radius:50px;
+      background:black;
+      color:white;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#ffd369;
+      color:black;
+      transform:translateY(-5px);
+    }
+
+    /* MAP */
+
+    .map-section iframe{
+      width:100%;
+      height:500px;
+      border:none;
+      border-radius:25px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.12);
+    }
+
+    /* NAVIGATION */
+
+    .page-navigation{
+      width:90%;
+      max-width:1200px;
+      margin:70px auto;
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      flex-wrap:wrap;
+    }
+
+    .nav-btn{
+      position:relative;
+      padding:16px 38px;
+      border-radius:50px;
+      font-size:18px;
+      font-weight:bold;
+      color:white;
+      background:linear-gradient(135deg,#111,#444);
+      transition:0.35s ease;
+      overflow:hidden;
+    }
+
+    .nav-btn:hover{
+      transform:translateY(-6px) scale(1.05);
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#111;
+      color:white;
+      text-align:center;
+      padding:60px 10%;
+      margin-top:80px;
+    }
+
+    footer h2{
+      font-size:35px;
+      margin-bottom:20px;
+    }
+
+    footer p{
+      color:#bbb;
+      line-height:1.8;
+    }
+
+    /* ANIMATION */
+
+    .fade{
+      opacity:0;
+      transform:translateY(30px);
+      transition:1s;
+    }
+
+    .fade.show{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    @media(max-width:768px){
+      nav ul{gap:15px;}
+      section{padding:80px 5%;}
+      .hero-content h2{font-size:55px;}
+    }
+
+  </style>
+</head>
+
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <h1>東京案内書</h1>
+  <ul>
+    <li><a href="#about">概要</a></li>
+    <li><a href="#spots">スポット</a></li>
+    <li><a href="#map">地図</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <div class="hero-content fade">
+
+    <h2>池袋</h2>
+
+    <p>東京のエネルギーとナイトシティ</p>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="title fade">
+
+    <h2>🌆 池袋について</h2>
+    <p>東京の現代文化を体験する</p>
+
+  </div>
+
+  <div class="about">
+
+    <img src="image/41.jpg" class="fade">
+
+    <div class="about-text fade">
+
+      <h3>池袋へようこそ ✨</h3>
+
+      <p>
+        池袋は東京を代表するにぎやかなエリアです。
+        ショッピング・アニメ・グルメなどが楽しめます。
+      </p>
+
+      <p>
+        伝統的な神社もあり、都会と文化が共存する街です。
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- SPOTS -->
+
+<section id="spots">
+
+  <div class="title fade">
+
+    <h2>✨ 人気スポット</h2>
+    <p>池袋のおすすめ場所</p>
+
+  </div>
+
+  <!-- MITAKE -->
+
+  <div class="place">
+
+    <img src="image/20.jpg" class="fade">
+
+    <div class="place-content fade">
+
+      <h3>⛩ 御嶽神社</h3>
+
+      <p>静かで落ち着いた神社です。</p>
+
+      <a href="mitake.html" class="btn">もっと見る</a>
+
+    </div>
+
+  </div>
+
+  <!-- SUNSHINE -->
+
+  <div class="place">
+
+    <div class="place-content fade">
+
+      <h3>🌇 サンシャイン60</h3>
+
+      <p>東京の夜景が楽しめる展望スポットです。</p>
+
+      <a href="sunshine.html" class="btn">もっと見る</a>
+
+    </div>
+
+    <img src="image/42.jpg" class="fade">
+
+  </div>
+
+  <!-- ANIME -->
+
+  <div class="place">
+
+    <img src="image/9.jpg" class="fade">
+
+    <div class="place-content fade">
+
+      <h3>🎮 アニメストリート</h3>
+
+      <p>アニメ・マンガ・グッズが集まる場所です。</p>
+
+      <a href="anime.html" class="btn">もっと見る</a>
+
+    </div>
+
+  </div>
+
+  <!-- FOOD -->
+
+  <div class="place">
+
+    <div class="place-content fade">
+
+      <h3>🍜 東京グルメ</h3>
+
+      <p>ラーメン・寿司・スイーツを楽しめます。</p>
+
+      <a href="food.html" class="btn">もっと見る</a>
+
+    </div>
+
+    <img src="image/19.jpg" class="fade">
+
+  </div>
+
+</section>
+
+<!-- MAP -->
+
+<section class="map-section" id="map">
+
+  <div class="title fade">
+
+    <h2>🗺 池袋マップ</h2>
+    <p>エリアを見る</p>
+
+  </div>
+
+  <iframe src="https://www.google.com/maps?q=Ikebukuro+Tokyo&output=embed"></iframe>
+
+</section>
+
+<!-- NAV -->
+
+<div class="page-navigation">
+
+  <a href="index.html" class="nav-btn">ホーム</a>
+  <a href="mejiro.html" class="nav-btn">次へ ➜</a>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <h2>東京案内書</h2>
+
+  <p>池袋ガイドサイト<br>東京旅行プロジェクト</p>
+
+</footer>
+
+<script>
+
+const fadeElements=document.querySelectorAll(".fade");
+
+window.addEventListener("scroll",()=>{
+
+  fadeElements.forEach(el=>{
+
+    if(el.getBoundingClientRect().top < window.innerHeight-100){
+      el.classList.add("show");
+    }
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>

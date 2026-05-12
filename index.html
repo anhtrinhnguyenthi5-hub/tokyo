@@ -2,368 +2,562 @@
 <html lang="ja">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="google-site-verification" content="xxxxx" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>東京案内書 - Tokyo Travel Guide | グエン・ティ・アン・チン</title>
-  <meta name="description" content="東京の観光地、グルメ、旅行情報を紹介するサイトです。">
-<meta name="keywords" content="東京, Tokyo, Tokyo guide, travel Tokyo, 池袋, 新宿, 観光">
-  <meta name="description" content="池袋、目白庭園、サンシャイン60、日本文化や食べ物を紹介する東京案内書です。" />
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>東京案内書 | Tokyo Travel</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", "Noto Sans JP", sans-serif;
+      background: #f8f5f1;
+      overflow-x: hidden;
+      color: #222;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    section {
+      padding: 100px 10%;
+    }
+
+    /* NAVBAR */
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 20px 10%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      backdrop-filter: blur(12px);
+      background: rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+    }
+
+    nav h1 {
+      color: white;
+      font-size: 28px;
+      font-weight: 700;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav a {
+      color: white;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd369;
+    }
+
+    /* HERO */
+
+    .hero {
+      height: 100vh;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.45),
+          rgba(0, 0, 0, 0.5)),
+        url("image/1.jpg") center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-content h2 {
+      font-size: 80px;
+      margin-bottom: 20px;
+      letter-spacing: 3px;
+    }
+
+    .hero-content p {
+      font-size: 22px;
+      margin-bottom: 35px;
+      line-height: 1.8;
+    }
+
+    .hero-content a {
+      padding: 15px 40px;
+      background: #ffd369;
+      color: black;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: 0.4s;
+    }
+
+    .hero-content a:hover {
+      background: white;
+      transform: translateY(-5px);
+    }
+
+    /* TITLE */
+
+    .title {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .title h2 {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .title p {
+      color: #777;
+      font-size: 18px;
+    }
+
+    /* ABOUT TOKYO */
+
+    .about {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about img {
+      border-radius: 25px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-text h3 {
+      font-size: 38px;
+      margin-bottom: 25px;
+    }
+
+    .about-text p {
+      color: #555;
+      line-height: 2;
+      font-size: 17px;
+    }
+
+    /* PLACE SECTION */
+
+    .place {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 50px;
+      align-items: center;
+      margin-bottom: 100px;
+    }
+
+    .place img {
+      border-radius: 25px;
+      height: 400px;
+      object-fit: cover;
+      transition: 0.5s;
+    }
+
+    .place img:hover {
+      transform: scale(1.03);
+    }
+
+    .place-content h3 {
+      font-size: 42px;
+      margin-bottom: 20px;
+    }
+
+    .place-content p {
+      color: #666;
+      line-height: 2;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 35px;
+      border-radius: 50px;
+      background: black;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ffd369;
+      color: black;
+    }
+
+    /* GALLERY */
+
+    .gallery {
+      columns: 3 250px;
+      column-gap: 15px;
+    }
+
+    .gallery img {
+      margin-bottom: 15px;
+      border-radius: 20px;
+      transition: 0.4s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 60px 10%;
+    }
+
+    footer h2 {
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+
+    footer p {
+      color: #bbb;
+      line-height: 1.8;
+    }
+
+    /* ANIMATION */
+
+    .fade {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 1s;
+    }
+
+    .fade.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px) {
+
+      nav {
+        padding: 18px 5%;
+      }
+
+      nav ul {
+        gap: 15px;
+      }
+
+      section {
+        padding: 80px 5%;
+      }
+
+      .hero-content h2 {
+        font-size: 50px;
+      }
+
+      .hero-content p {
+        font-size: 18px;
+      }
+
+      .title h2 {
+        font-size: 35px;
+      }
+
+      .place-content h3 {
+        font-size: 35px;
+      }
+    }
+    /* NAVIGATION */
+
+.page-navigation{
+  width:90%;
+  max-width:1200px;
+  margin:70px auto;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.nav-btn{
+  position:relative;
+  padding:16px 38px;
+  border-radius:50px;
+  text-decoration:none;
+  font-size:18px;
+  font-weight:bold;
+  color:white;
+
+  background:linear-gradient(135deg,#e8e8e8,#f3caca);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,0.2),
+    inset 0 1px 1px rgba(255,255,255,0.2);
+
+  transition:all 0.35s ease;
+
+  overflow:hidden;
+}
+
+.nav-btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:100%;
+
+  background:rgba(255,255,255,0.2);
+
+  transform:skewX(-25deg);
+  transition:0.6s;
+}
+
+.nav-btn:hover::before{
+  left:120%;
+}
+
+.nav-btn:hover{
+  transform:translateY(-6px) scale(1.05);
+
+  box-shadow:
+    0 15px 30px rgba(0,0,0,0.3);
+}
+
+.nav-btn:active{
+  transform:scale(0.96);
+}
   </style>
 </head>
+
 <body>
 
-  <header>
-    <img src="image/1.jpg" alt="Tokyo">
-    <h1>東京案内書- Tokyo Travel Guide</h1>
-    <p>グエン・ティ・アン・チンによる東京観光・旅行ガイドサイトです。</p>
-  </header>
+  <!-- NAVBAR -->
 
   <nav>
+
+    <h1>東京案内書</h1>
+
     <ul>
-      <li><a href="#route">地図</a></li>
-      <li><a href="#ikebukuro">池袋</a></li>
-      <li><a href="#shrine">神社</a></li>
-      <li><a href="#sunshine">サンシャイン60</a></li>
-      <li><a href="#food">アニメ</a></li>
-      <li><a href="#food">食べ物</a></li>
-      <li><a href="#mejiro">目白</a></li>
-      <li><a href="#cost">費用</a></li>
-      <li><a href="#reflection">感想</a></li>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#tokyo">TOKYO</a></li>
+      <li><a href="#places">PLACES</a></li>
+      <li><a href="#gallery">GALLERY</a></li>
     </ul>
+
   </nav>
 
-  <div class="container">
+  <!-- HERO -->
 
-    <section id="route">
-      <h2>🗺️　地図</h2>
+  <section class="hero" id="home">
 
-      <div class="route-box">
+    <div class="hero-content fade">
 
-        <div class="route-text">
-          <p>
-            Tokyo Metro Hibiya Line の Minowa Station から Ueno Station まで移動し、
-            上野駅で Yamanote Line に乗り換えて Ikebukuro Station へ向かいます。
-          </p>
-          <p>上野駅で Yamanote Line に乗り換え、Ikebukuro Station まで行きます。
-            池袋駅から徒歩約15分で Mejiro Garden に到着します🌿 </p>
-        </div>
+      <h2>TOKYO TRAVEL</h2>
+      <a href="#tokyo">Explore Tokyo</a>
 
-        <img src="image/37.jpg" alt="Route">
-      </div>
-      <div class="highlight">
-        <p>💴 運賃：約387円（Suica・PASMO利用可能）</p>
-        <p>⏰ 所要時間：約35〜45分</p>
-        <p>🚶 池袋駅から徒歩約15分で目白庭園に到着します。</p>
-      </div>
-    </section>
-    <section id="ikebukuro">
-      <!-- Ảnh bên trái -->
-      <div class="ikebukuro-image">
-        <img src="image/5.jpg" alt="Ikebukuro">
-      </div>
-      <!-- Chữ bên phải -->
-      <div class="ikebukuro-text">
-        <h2>🌆 池袋</h2>
-        <p>
-          Ikebukuro は、東京を代表する有名でにぎやかなエリアの一つです。
-          Sunshine City や西武、東武などの大型商業施設があり、
-          アニメ・マンガ・ゲーム関連のお店も多く、若者に人気があります。
-        </p>
-        <p>
-          現代的でにぎやかな雰囲気がある一方で、
-          Mitake Shrine のような静かな場所もあり、
-          日本の伝統文化を感じることができます。
-        </p>
-      </div>
-    </section>
-    <section id="shrine">
-      <h2>⛩️ 池袋御嶽神社</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>⛩️ Temizuya (手水舎)</h3>
-          <p>📍 日本の神社やお寺に入る前に、手や口を清める場所</p>
-          <p>💧 参拝の前に心身を清めるための場所です。</p>
-          <p>🌿 手水舎（Temizuya）は、日本の信仰文化における礼儀や敬意を表す大切な存在です。</p>
-          <p>📸 日本らしい伝統的な美しさが感じられるため、多くの観光客にも注目されています。</p>
-          <div class="photo-box">
-            <img src="image/22.jpg" alt="">
-          </div>
-        </div>
-        <div class="card">
-          <h3>⛩️ 鳥居 🦊 稲荷神社 </h3>
-          <p>⛩️ 鳥居（Torii）：日本の神社にある伝統的な門で、神聖な場所への入り口を示しています。</p>
-          <p>🦊 赤い前掛けをした二体の狐（Kitsune）の像は、稲荷神の使いとされ、幸運や神社を守る存在を象徴しています。また、赤い前掛けには災いを払う意味も込められています。</p>
-          <div class="photo-box">
-            <img src="image/23.jpg" alt="">
-          </div>
-        </div>
-        <div class="card">
-          <h3>🏮Mikoshi </h3>
-          <p>🏮 神輿展示エリアは、日本の伝統的なお祭りで使われる神輿（みこし）が展示されている場所です。</p>
-          <p>🙏 神輿には、神様を乗せて移動し、人々にご利益や守護をもたらすという意味があります。</p>
-          <div class="photo-box">
-            <img src="image/24.jpg" alt="">
-          </div>
-        </div>
-      </div>
-      <section class="highlight">
-        <div class="highlight-text">
-          <h3>⛩️ 日本文化について</h3>
-          <p>⛩️ 東京・池袋にある有名な神社</p>
-          <p>⛩️ 名称：Ikebukuro Mitake Shrine</p>
-          <p>📍 住所：東京都豊島区池袋3丁目51-2（〒171-0014）</p>
-          <p>🌿 にぎやかな都会の中にありながら、静かで落ち着いた雰囲気があります。</p>
-          <p>🦉 池袋のシンボルでもある「ふくろう」が特徴的な神社です。</p>
-          <p>📸 多くの人が参拝や写真撮影、開運祈願のために訪れます 🙏</p>
-        </div>
-        <div class="highlight-image">
-          <img src="image/20.jpg" alt="Mitake Shrine">
-        </div>
-      </section>
-    </section>
-    <section id="route">
-      <h2>🗺️ 地図</h2>
-      <div class="route-box">
-        <div class="route-text">
-          <p>🚌 Ikebukuro Mitake Shrine 周辺から Sunshine 60 までは、バスで通常約10〜15分かかります。</p>
-          <p>⏰ バス乗車時間：約10〜15分</p>
-          <p>🚶 バス停までの移動や降車後の徒歩時間を含めると、合計で約20〜30分ほどです。</p>
-          <p>💴 運賃：約220円。</p>
-        </div>
-        <img src="image/7.jpg" alt="Route">
-      </div>
-      <div class="highlight">
-        <p>💴 運賃：約387円（Suica・PASMO利用可能）</p>
-        <p>⏰ 所要時間：約35〜45分</p>
-        <p>🚶 池袋駅から徒歩約15分で目白庭園に到着します。</p>
-      </div>
-    </section>
-    <section id="sunshine">
-      <h2>🌃 サンシャイン60</h2>
+    </div>
+
+  </section>
+
+  <!-- TOKYO -->
+
+  <section id="tokyo">
+
+    <div class="title fade">
+
+      <h2>東京について</h2>
 
       <p>
-        Sunshine 60 Observatory Tenbou Park は、
-        池袋の有名な展望台です。
+        私の目から見た東京
       </p>
-      <p>🌃 高層階から東京の景色を一望でき、特に夕方や夜景がとても美しいことで知られています。</p>
-      <p>📸 写真撮影や観光スポットとして、多くの観光客に人気があります。</p>
-      <p>✨ 東京らしい現代的でにぎやかな雰囲気を感じることができます。</p>
 
-      <div class="card-grid">
-        <div class="card">
-          <h3>✨ 景色</h3>
-          <img src="image/35.jpg" alt="景色">
-          <p>
-            この地図は、イラストレーターの Toshinori Yonemura によって描かれたもので、
-            「365日の公園」というテーマでデザインされています。
-          </p>
-        </div>
+    </div>
 
-        <div class="card">
-          <h3>🌸 Sakura Event</h3>
-          <p>🌸「Tenbou Park Sakura」
-            Tenbou Park Sakura は、Sunshine 60 Observatory Tenbou Park（池袋）の60階で開催される桜イベントです。
-            🌸 会場は桜をテーマに装飾されており、まるで東京の空の上から桜を眺めているような雰囲気を楽しむことができます。
-          </p>
-          <img src="image/15.jpg" alt="景色">
-        </div>
+    <div class="about">
 
-        <div class="card">
-          <h3>🎹 ストリートピアノ</h3>
-          <img src="image/16.jpg" alt="景色">
-          <p>これは単なる演奏用の楽器ではなく、音楽を通じて人と人をつなぐという意味を持っています。</p>
-          <p>誰でも自由に弾くことができ、その場にいる人たちが音楽で自然に交流できるように設計された公共アートです。</p>
-        </div>
-        <div class="card">
-          <h3>📸写真</h3>
-          <p>📸 観光客に人気の写真撮影・観光スポットです。</p>
-          <p>🎫 入場料：1,200円</p>
-          <p>📍 住所：
-            Sunshine 60 Observatory Tenbou Park</p>
-          <p>🕒 営業時間：10:00〜21:00</p>
-          <img src="image/14.jpg" alt="景色">
-        </div>
+      <img src="image/40.jpg" class="fade">
 
-      </div>
-    </section>
+      <div class="about-text fade">
 
-    <section id="shrine">
-      <h2>アニメ</h2>
-      <section class="ghibli-section">
-        <div class="ghibli-text">
-          <p>🌳 木の温かい雰囲気で、ジブリの世界のようにデザインされています。</p>
-          <p>🎁 フィギュアやぬいぐるみ、コップ、キーホルダーなどのお土産を販売しています。</p>
-          <p>🎬 日本のアニメの世界に入ったような気分を味わうことができます。</p>
-          <p>📸 観光客の方が写真をたくさん撮れるかわいいスポットが多くございます。</p>
-        </div>
-        <div class="ghibli-gallery">
-          <div class="ghibli-photo">
-            <img src="image/10.jpg" alt="">
-          </div>
-          <div class="ghibli-photo">
-            <img src="image/9.jpg" alt="">
-          </div>
-          <div class="ghibli-photo">
-            <img src="image/11.jpg" alt="">
-          </div>
-          <div class="ghibli-photo">
-            <img src="image/12.jpg" alt="">
-          </div>
-        </div>
-      </section>
-    </section>
-    <section id="food">
-      <h2>🍡 食べ物</h2>
-      <div class="card-grid">
-        <div class="card">
-          <h3>🍡 玉露地</h3>
-          <img src="image/36.jpg" alt="wagashi">
-          <p>
-            小豆と白いんげん豆を使用した日本の伝統的な和菓子です。
-            透明な寒天とやわらかいもち生地が特徴です。
-          </p>
-          <p><strong>価格：</strong>260円</p>
-        </div>
-        <div class="card">
-          <h3>🍜 牛丼</h3>
-          <img src="image/19.jpg" alt="wagashi">
-          <p>
-            薄切り牛肉と玉ねぎを使った人気料理です。
-            セットには味噌汁とサラダが付いています。
-          </p>
-          <p><strong>価格：</strong>1200円</p>
-        </div>
-      </div>
-    </section>
-    <section id="route">
-      <h2>🗺️ 地図</h2>
+        <h3>東京へようこそいらっしゃいました🌸</h3>
 
-      <div class="route-box">
-
-        <div class="route-text">
-          <p>
-            🚃 Tokyo Metro Hibiya Line の Minowa Station から Ueno Station まで行きます。
-          </p>
-          <p>上野駅で Yamanote Line に乗り換えて 目白駅まで移動します。 
-      目白駅から徒歩約15分で Mejiro Garden に到着します 🌿 </p>
-        </div>
-
-        <img src="image/6.jpg" alt="Route">
+        <p>
+          東京は、にぎやかな都会と静かな自然が共存する特別な場所です。
+          池袋では東京らしいエネルギーと夜景を感じることができ、
+          目白では静かな庭園と落ち着いた雰囲気を楽しむことができます。
+          このウェブサイトでは、私が実際に訪れた東京の魅力を紹介します。
+        </p>
 
       </div>
 
-      <div class="highlight">
-        <p>💴 運賃：約387円（Suica・PASMO利用可能）</p>
-        <p>⏰ 所要時間：約35〜45分</p>
-        <p>🚶 目白駅駅から徒歩約15分で目白庭園に到着します。</p>
-      </div>
-    </section>
+    </div>
 
-    <section id="mejiro">
-      <h2>🌿 目白庭園</h2>
+  </section>
+
+  <!-- PLACES -->
+
+  <section id="places">
+
+    <div class="title fade">
+
+      <h2>観光スポット</h2>
 
       <p>
-        目白庭園は、目白駅 の近くにある小さくてとても静かな日本庭園です。</p>
-      <p>池泉回遊式の庭園で、中央には大きな池があり、鯉や小さな滝、そして日本の伝統的な茶室があります。</p>
-      <p>駅から徒歩約5分で行くことができます。</p>
-      <div class="card-grid">
-        <div class="card">
-          <h3>🚪 門</h3>
-          <p>こちらは、東京・豊島区にある日本庭園「目白庭園」の正門です。</p>
-          <p>この門は「長屋門（ながやもん）」という様式で建てられており、
-            江戸時代の武士屋敷によく見られた伝統的な建築様式です。</p>
-          <div class="highlight-image">
-            <img src="image/27.jpg" alt="Mitake Shrine">
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>🎯 中央</h3>
-          <p>・中央の池：静かな水面が周囲の緑を映し出し、落ち着いた雰囲気を感じられます。</p>
-          <p>・伝統建築：池のそばにある茶室「赤鳥庵」は、数寄屋造りの趣ある建物です。</p>
-          <p>・豊かな自然：庭園にはモミジや桜などが植えられ、四季ごとに異なる美しい景色を楽しめます。</p>
-          <div class="highlight-image">
-            <img src="image/29.jpg" alt="Mitake Shrine">
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>🚶‍♂️ 入り口</h3>
-          <p>目白庭園は、四季折々の美しい景色にあふれています。
-            庭園のあらゆる場所で、自然と静かな風景の心地よい魅力を感じることができます。</p>
-          <div class="highlight-image">
-            <img src="image/32.jpg" alt="Mitake Shrine">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="cost">
-      <h2>💴 費用まとめ</h2>
-
-      <table>
-        <tr>
-          <th>内容</th>
-          <th>金額</th>
-        </tr>
-
-        <tr>
-          <td>🚃 電車代</td>
-          <td>1548円</td>
-        </tr>
-
-        <tr>
-          <td>🚌 バス代</td>
-          <td>220円</td>
-        </tr>
-
-        <tr>
-          <td>🏢 サンシャイン60</td>
-          <td>1200円</td>
-        </tr>
-
-        <tr>
-          <td>🍞 玉露地</td>
-          <td>520円</td>
-        </tr>
-
-        <tr>
-          <td>🍜 牛丼</td>
-          <td>1200円</td>
-        </tr>
-
-        <tr>
-          <th>合計</th>
-          <th>4688円</th>
-        </tr>
-      </table>
-    </section>
-
-    <section id="reflection">
-      <h2>✨ 感想</h2>
-
-      <p>
-        特に、池袋駅に戻って見学できたことは、とても印象に残りました。
-        ここは私たちが以前実習をした場所です。
-        久しぶりに来たので、最初は少し道に迷ってしまいましたが、駅の案内表示を見ながら落ち着いて進み、
-        無事に目的の場所へ行くことができました。その時、実習のときのことを思い出し、少し懐かしい気持ちになりました。
+        東京でのお気に入りの場所
       </p>
-      <p>
-        また、日本の文化についても学ぶことができました。
-        鳥居や手水舎、神社などを通して、
-        日本人の礼儀や心の考え方について知ることができ、とても勉強になりました。
-        この3日間の見学を通して、私は多くのことを学び、実際の体験を通して自分の考え方も少し成長できたと思います。
-     
-    </section>
+
+    </div>
+
+    <!-- IKEBUKURO -->
+
+    <div class="place">
+
+      <img src="image/41.jpg" class="fade">
+
+      <div class="place-content fade">
+
+        <h3>🌆 池袋</h3>
+
+        <p>
+          池袋は東京を代表する人気エリアです。
+          夜になるとネオンと街の光がとても美しく、
+          ショッピングや食事を楽しむことができます。
+        </p>
+
+       <a href="ikebukuro.html" class="btn">もっと見る</a>
+
+      </div>
+
+    </div>
+
+    <!-- MEJIRO -->
+
+    <div class="place">
+
+      <div class="place-content fade">
+
+        <h3>🌿 目白</h3>
+
+        <p>
+          目白は静かで落ち着いた雰囲気が魅力の場所です。
+          自然が多く、日本らしい庭園をゆっくり楽しむことができます。
+        </p>
+
+        <a href="mejiro.html" class="btn">もっと見る</a>
+
+      </div>
+
+      <img src="image/43.jpg" class="fade">
+
+    </div>
+
+  </section>
+  <!-- KANZO / SUMMARY -->
+
+<section id="kanzo">
+
+  <div class="title fade">
+
+    <h2>📝 感想</h2>
 
   </div>
 
+  <div class="about">
+    <div class="about-text fade">
+
+      <p>
+        東京を旅行して感じたことは、都会のにぎやかさと自然の静けさが
+        とてもバランスよく共存しているということです。
+        池袋ではエネルギーと夜景を楽しみ、目白では落ち着いた雰囲気を感じました。
+        それぞれの場所には違った魅力があり、
+        写真スポット、ショッピング、グルメ、文化体験など
+        さまざまな楽しみ方ができました。
+      </p>
+      <p>特に、池袋駅に戻って見学できたことは、とても印象に残りました。 
+        ここは私たちが以前実習をした場所です。 
+        久しぶりに来たので、最初は少し道に迷ってしまいましたが、駅の案内表示を見ながら落ち着いて進み、
+         無事に目的の場所へ行くことができました。その時、実習のときのことを思い出し、少し懐かしい気持ちになりました。
+        </p>
+        <p>また、日本の文化についても学ぶことができました。 
+          鳥居や手水舎、神社などを通して、 
+          日本人の礼儀や心の考え方について知ることができ、とても勉強になりました。
+           この3日間の見学を通して、私は多くのことを学び、
+           実際の体験を通して自分の考え方も少し成長できたと思います。
+          </p>
+
+    </div>
+
+  </div>
+
+</section>
+  <!-- NAVIGATION BUTTON -->
+
+<div class="page-navigation">
+
+  <a href="ikebukuro.html" class="nav-btn">
+    次 ➜
+  </a>
+
+</div>
+  <!-- FOOTER -->
+
   <footer>
-    <p>© 2026 東京案内書 | Created from PDF by グエン・ティ・アン・チン</p>
+
+    <h2>東京案内書</h2>
+
+    <p>
+      Ikebukuro & Mejiro Travel Website <br>
+      Made With ❤️ In Tokyo
+    </p>
+
   </footer>
+
+  <!-- SCRIPT -->
+
+  <script>
+
+    const fadeElements = document.querySelectorAll(".fade");
+
+    window.addEventListener("scroll", () => {
+
+      fadeElements.forEach(el => {
+
+        const position = el.getBoundingClientRect().top;
+
+        if (position < window.innerHeight - 100) {
+
+          el.classList.add("show");
+
+        }
+
+      });
+
+    });
+
+  </script>
 
 </body>
 

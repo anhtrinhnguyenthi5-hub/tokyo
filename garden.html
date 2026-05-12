@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>目白庭園 | Tokyo Travel</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", "Noto Sans JP", sans-serif;
+            background: #f8f5f1;
+            color: #222;
+            line-height: 1.8;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        section {
+            padding: 100px 10%;
+        }
+
+        /* HERO */
+
+        .hero {
+            height: 100vh;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.45),
+                    rgba(0, 0, 0, 0.55)),
+                url("image/27.jpg") center/cover;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 85px;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 22px;
+        }
+
+        /* CONTENT */
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 100px 0;
+        }
+
+        .title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .title h2 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .title p {
+            color: #666;
+            font-size: 18px;
+            line-height: 2;
+        }
+
+        /* GALLERY */
+
+        .gallery {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(300px, 1fr));
+
+            gap: 30px;
+
+            margin-bottom: 80px;
+        }
+
+        .gallery-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.1);
+
+            transition: 0.4s;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .gallery-card img {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .gallery-content {
+            padding: 25px;
+        }
+
+        .gallery-content h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .gallery-content p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* INFO + MAP */
+
+        .info-map {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(320px, 1fr));
+
+            gap: 40px;
+
+            align-items: center;
+        }
+
+        .info-box {
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-box h3 {
+            font-size: 35px;
+            margin-bottom: 25px;
+        }
+
+        .info-box p {
+            margin-bottom: 18px;
+            color: #555;
+        }
+
+        iframe {
+            width: 100%;
+            height: 400px;
+            border: none;
+            border-radius: 25px;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        /* BUTTON */
+
+        .page-navigation {
+            margin-top: 80px;
+
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            padding: 15px 38px;
+
+            border-radius: 50px;
+
+            background: black;
+
+            color: white;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: #ffd369;
+            color: black;
+
+            transform: translateY(-5px);
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 60px 10%;
+            margin-top: 80px;
+        }
+
+        footer h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            color: #bbb;
+            line-height: 1.8;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:768px) {
+
+            .hero-content h1 {
+                font-size: 55px;
+            }
+
+            section {
+                padding: 80px 5%;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>目白庭園</h1>
+
+            <p>
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CONTENT -->
+
+    <div class="container">
+
+        <div class="title">
+
+            <h2>🌿 目白庭園について</h2>
+
+            <p>
+                目白庭園は、静かで落ち着いた雰囲気が魅力の日本庭園です。
+                四季によって違う景色を楽しむことができ、
+                特に春と秋はとても人気があります。
+            </p>
+
+        </div>
+
+        <!-- GALLERY -->
+
+        <div class="gallery">
+
+            <div class="gallery-card">
+
+                <img src="image/32.jpg">
+
+                <div class="gallery-content">
+
+                    <h3>🚶‍♂️ 入り口</h3>
+
+                    <p>目白庭園は、四季折々の美しい景色にあふれています。
+                        庭園のあらゆる場所で、自然と静かな風景の心地よい魅力を感じることができます。</p>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-card">
+
+                <img src="image/29.jpg">
+
+                <div class="gallery-content">
+
+                    <h3>🎯 中央</h3>
+
+                    <p>
+                        中央の池：静かな水面が周囲の緑を映し出し、落ち着いた雰囲気を感じられます。
+                    </p>
+                    <p>伝統建築：池のそばにある茶室「赤鳥庵」は、数寄屋造りの趣ある建物です。</p>
+                    <p>豊かな自然：庭園にはモミジや桜などが植えられ、四季ごとに異なる美しい景色を楽しめます。</p>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-card">
+
+                <img src="image/45.jpg">
+
+                <div class="gallery-content">
+
+                    <h3>🌊 自然の滝</h3>
+                    
+                    <p>
+                        美しい自然と池があり、
+                        ゆっくり散歩を楽しむことができます。
+                    </p>
+                    <p>
+                        東京の中でも静かな空間で、
+                        リラックスできる場所です。
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- INFO + MAP -->
+
+        <div class="info-map">
+
+            <div class="info-box">
+
+                <h3>📍 情報</h3>
+
+                <p><strong>場所:</strong> 東京都豊島区目白</p>
+
+                <p><strong>アクセス:</strong> 目白駅から徒歩約5分</p>
+
+                <p><strong>おすすめ:</strong> 散歩・写真撮影・自然体験</p>
+
+                <p><strong>雰囲気:</strong> 静かで落ち着いた日本庭園</p>
+
+            </div>
+
+            <iframe src="https://www.google.com/maps?q=Mejiro+Garden+Tokyo&output=embed">
+            </iframe>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <div class="page-navigation">
+
+            <a href="mejiro.html" class="nav-btn">
+                ⬅ 戻る
+            </a>
+
+            <a href="university.html" class="nav-btn">
+                次へ ➜
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>東京案内書</h2>
+
+        <p>
+            Tokyo Travel Guide <br>
+            Made With ❤️ In Tokyo
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

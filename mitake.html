@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>御嶽神社</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        /* HERO */
+
+        .hero {
+            position: relative;
+            height: 80vh;
+            overflow: hidden;
+        }
+
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(60%);
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            width: 90%;
+        }
+
+        .hero-text h1 {
+            font-size: 70px;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+        }
+
+        .hero-text p {
+            font-size: 22px;
+        }
+
+        /* CONTENT */
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 0;
+        }
+
+        .description {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .description h2 {
+            font-size: 45px;
+            margin-bottom: 25px;
+        }
+
+        .description p {
+            font-size: 18px;
+            color: #555;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        /* GALLERY */
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 70px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: 0.4s;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery img:hover {
+            transform: scale(1.04);
+        }
+
+        /* INFO + MAP */
+
+        .info-map-container {
+            display: flex;
+            gap: 40px;
+            align-items: stretch;
+            margin-bottom: 70px;
+            flex-wrap: wrap;
+        }
+
+        .info-box {
+            flex: 1;
+            min-width: 320px;
+
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-box h3 {
+            margin-bottom: 25px;
+            font-size: 35px;
+        }
+
+        .info-box p {
+            margin-bottom: 18px;
+            font-size: 17px;
+        }
+
+        /* MAP */
+
+        .map-box {
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .map-box iframe {
+            width: 100%;
+            height: 100%;
+            min-height: 350px;
+
+            border: none;
+            border-radius: 25px;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* NAVIGATION */
+
+        .page-navigation {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            position: relative;
+            padding: 16px 38px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+
+            background: linear-gradient(135deg, #111, #444);
+
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.2),
+                inset 0 1px 1px rgba(255, 255, 255, 0.2);
+
+            transition: all 0.35s ease;
+
+            overflow: hidden;
+        }
+
+        .nav-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+
+            background: rgba(255, 255, 255, 0.2);
+
+            transform: skewX(-25deg);
+            transition: 0.6s;
+        }
+
+        .nav-btn:hover::before {
+            left: 120%;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-6px) scale(1.05);
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 70px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <img src="image/20.jpg" alt="御嶽神社">
+
+        <div class="hero-text">
+
+            <h1>御嶽神社</h1>
+
+            <p>
+                池袋の静かで美しい神社
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- CONTENT -->
+
+    <div class="container">
+
+        <!-- DESCRIPTION -->
+
+        <div class="description">
+
+            <h2>⛩ 御嶽神社</h2>
+
+            <p>
+                御嶽神社は池袋にある落ち着いた雰囲気の神社です。
+                周囲はにぎやかな街ですが、
+                神社の中に入ると静かでリラックスした空間が広がります。
+                日本文化を感じながら散歩できる人気スポットです。
+            </p>
+
+        </div>
+
+        <!-- GALLERY -->
+
+        <div class="gallery">
+            <div>
+                <p>
+                <h1>⛩️ 手水舎</h1>
+                </p>
+                <p>📍 日本の神社やお寺に入る前に、手や口を清める場所
+                    💧 参拝の前に心身を清めるための場所です。
+                    🌿 手水舎は、日本の信仰文化における礼儀や敬意を表す大切な存在です。
+                    📸 日本らしい伝統的な美しさが感じられるため、多くの観光客にも注目されています。</p>
+                <img src="image/22.jpg" alt="御嶽神社">
+            </div>
+
+            <div>
+                <p>
+                <h1>⛩️ 鳥居 🦊 稲荷神社</h1>
+                <p>⛩️ 鳥居：日本の神社にある伝統的な門で、神聖な場所への入り口を示しています。
+                    🦊 赤い前掛けをした二体の狐の像は、稲荷神の使いとされ、
+                    幸運や神社を守る存在を象徴しています。
+                    また、赤い前掛けには災いを払う意味も込められています。</p>
+                </p>
+                <img src="image/23.jpg" alt="神社">
+            </div>
+
+            <div>
+                <p>
+                <h1>🏮 神輿</h1>
+                </p>
+                <p>🏮 神輿展示エリアは、日本の伝統的なお祭りで
+                    使われる神輿が展示されている場所です。
+                    🙏 神輿には、神様を乗せて移動し、
+                    人々にご利益や守護をもたらすという意味があります。</p>
+                <img src="image/24.jpg" alt="神輿">
+            </div>
+        </div>
+
+        <!-- INFO + MAP -->
+
+        <div class="info-map-container">
+
+            <!-- INFORMATION -->
+            <div class="info-box">
+                <h3>📍 情報</h3>
+                <p>⛩️ 東京・池袋にある有名な神社</p>
+                <p>⛩️ 名称：池袋御嶽神社</p>
+                <p>📍 住所：東京都豊島区池袋3丁目51-2（〒171-0014）</p>
+                <p>🌿 にぎやかな都会の中にありながら、静かで落ち着いた雰囲気があります。</p>
+                <p>🦉 池袋のシンボルでもある「ふくろう」が特徴的な神社です。</p>
+                <p>📸 多くの人が参拝や写真撮影、開運祈願のために訪れます 🙏</p>
+            </div>
+
+            <!-- MAP -->
+            <div class="map-box">
+                <iframe src="https://www.google.com/maps?q=Mitake+Shrine+Tokyo&output=embed">
+                </iframe>
+            </div>
+
+        </div>
+
+        <!-- NAVIGATION -->
+
+        <div class="page-navigation">
+
+            <a href="ikebukuro.html" class="nav-btn">
+                ⬅ 戻る
+            </a>
+
+            <a href="sunshine.html" class="nav-btn">
+                次へ ➜
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>© 東京旅行ガイド</p>
+
+    </footer>
+
+</body>
+
+</html>

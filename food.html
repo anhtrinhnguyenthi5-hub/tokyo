@@ -1,0 +1,521 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Food Street | Tokyo Travel</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial,sans-serif;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+
+            background:
+            linear-gradient(
+                to bottom,
+                #fffaf5,
+                #ffffff,
+                #fff7f0
+            );
+
+            color:#333;
+
+            line-height:1.8;
+        }
+
+        /* HERO */
+
+        .hero{
+            position:relative;
+            height:90vh;
+            overflow:hidden;
+        }
+
+        .hero img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            filter:brightness(60%);
+        }
+
+        .hero::after{
+            content:"";
+            position:absolute;
+            inset:0;
+
+            background:
+            linear-gradient(
+                to right,
+                rgba(0,0,0,0.7),
+                rgba(0,0,0,0.2)
+            );
+        }
+
+        .hero-text{
+            position:absolute;
+            top:50%;
+            left:8%;
+            transform:translateY(-50%);
+            z-index:5;
+            color:white;
+        }
+
+        .hero-text h1{
+            font-size:90px;
+            letter-spacing:8px;
+            margin-bottom:20px;
+            font-weight:900;
+        }
+
+        .hero-text p{
+            font-size:24px;
+            color:#f1f1f1;
+        }
+
+        /* CONTAINER */
+
+        .container{
+            width:90%;
+            max-width:1300px;
+            margin:auto;
+            padding:100px 0;
+        }
+
+        /* DESCRIPTION */
+
+        .description{
+            background:white;
+            padding:70px;
+            border-radius:35px;
+            margin-bottom:90px;
+            box-shadow:
+            0 10px 35px rgba(0,0,0,0.08);
+            text-align:center;
+        }
+
+        .description h2{
+            font-size:48px;
+            margin-bottom:30px;
+            color:#111;
+        }
+
+        .description p{
+            font-size:18px;
+            color:#666;
+            margin-bottom:15px;
+        }
+
+        /* FOOD GRID */
+
+        .food-grid{
+            display:grid;
+            grid-template-columns:
+            repeat(auto-fit,minmax(300px,1fr));
+            gap:35px;
+            margin-bottom:100px;
+        }
+
+        .food-card{
+            background:white;
+            border-radius:30px;
+            overflow:hidden;
+            box-shadow:
+            0 10px 30px rgba(0,0,0,0.08);
+            transition:0.4s;
+        }
+
+        .food-card:hover{
+            transform:
+            translateY(-10px);
+        }
+
+        .food-image{
+            position:relative;
+            overflow:hidden;
+            height:260px;
+        }
+
+        .food-image img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            transition:0.5s;
+        }
+
+        .food-card:hover img{
+            transform:scale(1.08);
+        }
+
+        .food-overlay{
+            position:absolute;
+            inset:0;
+
+            background:
+            linear-gradient(
+                to top,
+                rgba(0,0,0,0.8),
+                rgba(0,0,0,0.1)
+            );
+
+            display:flex;
+            flex-direction:column;
+            justify-content:flex-end;
+
+            padding:25px;
+
+            opacity:0;
+            transition:0.4s;
+        }
+
+        .food-card:hover .food-overlay{
+            opacity:1;
+        }
+
+        .food-overlay h3{
+            color:white;
+            font-size:30px;
+            margin-bottom:10px;
+        }
+
+        .food-overlay p{
+            color:#eee;
+        }
+
+        .food-content{
+            padding:25px;
+        }
+
+        .food-content h3{
+            font-size:28px;
+            margin-bottom:15px;
+        }
+
+        .food-content p{
+            color:#666;
+            margin-bottom:15px;
+        }
+
+        .price{
+            display:inline-block;
+            padding:10px 20px;
+            border-radius:50px;
+            background:#fff1e6;
+            color:#ff6b35;
+            font-weight:bold;
+        }
+
+        /* INFO + MAP */
+
+        .info-map{
+            display:grid;
+            grid-template-columns:
+            1fr 1.3fr;
+            gap:40px;
+            align-items:stretch;
+            margin-bottom:100px;
+        }
+
+        .info-box{
+            background:white;
+            padding:50px;
+            border-radius:35px;
+            box-shadow:
+            0 10px 30px rgba(0,0,0,0.08);
+
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+
+        .info-box h3{
+            font-size:42px;
+            margin-bottom:30px;
+        }
+
+        .info-box p{
+            font-size:18px;
+            color:#555;
+            margin-bottom:25px;
+            line-height:1.9;
+        }
+
+        .map-box iframe{
+            width:100%;
+            height:100%;
+            min-height:450px;
+            border:none;
+            border-radius:35px;
+            box-shadow:
+            0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        /* BUTTON */
+
+        .page-navigation{
+            display:flex;
+            justify-content:center;
+            gap:30px;
+            flex-wrap:wrap;
+        }
+
+        .nav-btn{
+            padding:16px 38px;
+            border-radius:50px;
+            text-decoration:none;
+            font-size:18px;
+            font-weight:bold;
+            color:white;
+
+            background:
+            linear-gradient(
+                135deg,
+                #ff7b54,
+                #ffb26b
+            );
+
+            box-shadow:
+            0 10px 25px rgba(255,120,80,0.25);
+
+            transition:0.4s;
+        }
+
+        .nav-btn:hover{
+            transform:
+            translateY(-5px)
+            scale(1.05);
+        }
+
+        /* FOOTER */
+
+        footer{
+            margin-top:120px;
+            background:white;
+            padding:40px;
+            text-align:center;
+            color:#777;
+            border-top:
+            1px solid rgba(0,0,0,0.05);
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:900px){
+
+            .hero-text h1{
+                font-size:60px;
+            }
+
+            .hero-text p{
+                font-size:18px;
+            }
+
+            .description{
+                padding:40px;
+            }
+
+            .description h2{
+                font-size:36px;
+            }
+
+            .info-map{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <img src="image/19.jpg">
+
+        <div class="hero-text">
+
+            <h1>🍜 料理</h1>
+        </div>
+
+    </section>
+
+    <!-- CONTENT -->
+
+    <div class="container">
+
+        <!-- DESCRIPTION -->
+
+        <div class="description">
+
+            <h2>🍜 料理</h2>
+
+            <p>
+                池袋には多くの人気レストランやカフェがあります。
+            </p>
+
+            <p>
+                ラーメン、寿司、和菓子、スイーツなど、
+                日本ならではの食文化を楽しむことができます。
+            </p>
+
+            <p>
+                観光客や若者に人気のグルメスポットです。
+            </p>
+
+        </div>
+
+        <!-- FOOD GRID -->
+
+        <div class="food-grid">
+
+            <!-- ITEM 1 -->
+
+            <div class="food-card">
+
+                <div class="food-image">
+
+                    <img src="image/19.jpg">
+
+                    <div class="food-overlay">
+
+                        <h3>🍜 牛丼</h3>
+
+                        <p></p>
+
+                    </div>
+
+                </div>
+
+                <div class="food-content">
+
+                    <h3>牛丼</h3>
+
+                    <p>
+                        薄切り牛肉と玉ねぎを使った人気料理です。 
+                        セットには味噌汁とサラダが付いています。
+                    </p>
+
+                    <span class="price">¥1200</span>
+
+                </div>
+
+            </div>
+
+            <!-- ITEM 2 -->
+
+            <div class="food-card">
+
+                <div class="food-image">
+
+                    <img src="image/36.jpg">
+
+                    <div class="food-overlay">
+
+                        <h3>🍡 玉露地</h3>
+
+                        <p></p>
+
+                    </div>
+
+                </div>
+
+                <div class="food-content">
+
+                    <h3>和菓子</h3>
+
+                    <p>
+                       小豆と白いんげん豆を使用した日本の伝統的な和菓子です。 
+                       透明な寒天とやわらかいもち生地が特徴です。
+                    </p>
+
+                    <span class="price">¥260</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- INFO + MAP -->
+
+        <section class="info-map">
+
+            <div class="info-box">
+
+                <h3>📍 情報</h3>
+
+                <p>
+                    <strong>場所:</strong><br>
+                    東京都豊島区池袋
+                </p>
+
+                <p>
+                    <strong>営業時間:</strong><br>
+                    11:00 - 22:00
+                </p>
+
+                <p>
+                    <strong>アクセス:</strong><br>
+                    池袋駅から徒歩約5分
+                </p>
+
+                <p>
+                    <strong>おすすめ:</strong><br>
+                    ラーメン・寿司・和菓子
+                </p>
+
+            </div>
+
+            <div class="map-box">
+
+                <iframe
+                src="https://www.google.com/maps?q=Ikebukuro+Food+Tokyo&output=embed">
+                </iframe>
+
+            </div>
+
+        </section>
+
+        <!-- BUTTON -->
+
+        <div class="page-navigation">
+
+            <a href="anime.html" class="nav-btn">
+                ⬅ 戻る
+            </a>
+
+            <a href="ikebukuro.html" class="nav-btn">
+                ホーム　➜
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>© Tokyo Travel Guide</p>
+
+    </footer>
+
+</body>
+
+</html>
