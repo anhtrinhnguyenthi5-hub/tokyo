@@ -2,253 +2,583 @@
 <html lang="ja">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>目白庭園 | Tokyo Travel</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
         rel="stylesheet">
 
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
+
+        /* =========================
+           RESET
+        ========================= */
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            scroll-behavior:smooth;
         }
 
-        body {
-            font-family: "Poppins", "Noto Sans JP", sans-serif;
-            background: #f8f5f1;
-            color: #222;
-            line-height: 1.8;
+        body{
+
+            font-family:
+            "Poppins",
+            "Noto Sans JP",
+            sans-serif;
+
+            background:#f8f4f2;
+
+            color:#222;
+
+            line-height:1.8;
+
+            overflow-x:hidden;
         }
 
-        img {
-            width: 100%;
-            display: block;
+        img{
+            width:100%;
+            display:block;
         }
 
-        a {
-            text-decoration: none;
+        a{
+            text-decoration:none;
         }
 
-        section {
-            padding: 100px 10%;
+        /* =========================
+           SCROLLBAR
+        ========================= */
+
+        ::-webkit-scrollbar{
+            width:10px;
         }
 
-        /* HERO */
+        ::-webkit-scrollbar-thumb{
 
-        .hero {
-            height: 100vh;
+            background:#ffc9d9;
+
+            border-radius:20px;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero{
+
+            height:100vh;
 
             background:
-                linear-gradient(rgba(0, 0, 0, 0.45),
-                    rgba(0, 0, 0, 0.55)),
-                url("image/27.jpg") center/cover;
+            linear-gradient(
+                rgba(20,20,20,0.18),
+                rgba(20,20,20,0.42)
+            ),
+            url("image/27.jpg")
+            center/cover;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+            display:flex;
 
-            color: white;
+            justify-content:center;
+
+            align-items:center;
+
+            text-align:center;
+
+            color:white;
         }
 
-        .hero-content h1 {
-            font-size: 85px;
-            letter-spacing: 5px;
-            margin-bottom: 20px;
+        .hero-content h1{
+
+            font-size:95px;
+
+            letter-spacing:6px;
+
+            margin-bottom:20px;
+
+            text-shadow:
+            0 0 30px rgba(255,255,255,0.18);
         }
 
-        .hero-content p {
-            font-size: 22px;
+        .hero-content p{
+
+            font-size:22px;
+
+            color:#f5f5f5;
         }
 
-        /* CONTENT */
+        /* =========================
+           CONTAINER
+        ========================= */
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            padding: 100px 0;
+        .container{
+
+            width:90%;
+
+            max-width:1200px;
+
+            margin:auto;
+
+            padding:100px 0;
         }
 
-        .title {
-            text-align: center;
-            margin-bottom: 60px;
+        /* =========================
+           TITLE
+        ========================= */
+
+        .title{
+
+            text-align:center;
+
+            margin-bottom:70px;
         }
 
-        .title h2 {
-            font-size: 45px;
-            margin-bottom: 20px;
+        .title h2{
+
+            font-size:50px;
+
+            margin-bottom:20px;
+
+            background:
+            linear-gradient(
+                45deg,
+                #444,
+                #ff9fbe
+            );
+
+            -webkit-background-clip:text;
+
+            -webkit-text-fill-color:transparent;
         }
 
-        .title p {
-            color: #666;
-            font-size: 18px;
-            line-height: 2;
+        .title p{
+
+            color:#666;
+
+            font-size:18px;
+
+            line-height:2;
         }
 
-        /* GALLERY */
+        /* =========================
+           GALLERY
+        ========================= */
 
-        .gallery {
-            display: grid;
+        .gallery{
+
+            display:grid;
 
             grid-template-columns:
-                repeat(auto-fit, minmax(300px, 1fr));
+            repeat(auto-fit,minmax(300px,1fr));
 
-            gap: 30px;
+            gap:35px;
 
-            margin-bottom: 80px;
+            margin-bottom:90px;
         }
 
-        .gallery-card {
-            background: white;
-            border-radius: 25px;
-            overflow: hidden;
+        .gallery-card{
+
+            background:
+            rgba(255,255,255,0.72);
+
+            backdrop-filter:blur(12px);
+
+            border-radius:30px;
+
+            overflow:hidden;
+
+            border:
+            1px solid rgba(255,183,210,0.10);
 
             box-shadow:
-                0 10px 25px rgba(0, 0, 0, 0.1);
+            0 10px 35px rgba(0,0,0,0.06);
 
-            transition: 0.4s;
+            transition:0.45s;
         }
 
-        .gallery-card:hover {
-            transform: translateY(-10px);
+        .gallery-card:hover{
+
+            transform:
+            translateY(-10px);
+
+            box-shadow:
+            0 15px 45px rgba(255,183,210,0.16);
         }
 
-        .gallery-card img {
-            height: 250px;
-            object-fit: cover;
+        .gallery-card img{
+
+            height:250px;
+
+            object-fit:cover;
+
+            transition:0.5s;
+
+            filter:
+            brightness(0.97)
+            contrast(1.02);
         }
 
-        .gallery-content {
-            padding: 25px;
+        .gallery-card img:hover{
+
+            transform:scale(1.03);
         }
 
-        .gallery-content h3 {
-            font-size: 28px;
-            margin-bottom: 15px;
+        .gallery-content{
+
+            padding:28px;
         }
 
-        .gallery-content p {
-            color: #666;
-            line-height: 1.8;
+        .gallery-content h3{
+
+            font-size:28px;
+
+            margin-bottom:15px;
         }
 
-        /* INFO + MAP */
+        .gallery-content p{
 
-        .info-map {
-            display: grid;
+            color:#666;
+
+            line-height:1.9;
+
+            margin-bottom:10px;
+        }
+
+        /* =========================
+           INFO + MAP
+        ========================= */
+
+        .info-map{
+
+            display:grid;
 
             grid-template-columns:
-                repeat(auto-fit, minmax(320px, 1fr));
+            repeat(auto-fit,minmax(320px,1fr));
 
-            gap: 40px;
+            gap:40px;
 
-            align-items: center;
+            align-items:center;
         }
 
-        .info-box {
-            background: white;
-            padding: 40px;
-            border-radius: 25px;
+        .info-box{
+
+            background:
+            rgba(255,255,255,0.72);
+
+            backdrop-filter:blur(12px);
+
+            padding:40px;
+
+            border-radius:30px;
+
+            border:
+            1px solid rgba(255,183,210,0.10);
 
             box-shadow:
-                0 10px 25px rgba(0, 0, 0, 0.1);
+            0 10px 35px rgba(0,0,0,0.06);
         }
 
-        .info-box h3 {
-            font-size: 35px;
-            margin-bottom: 25px;
+        .info-box h3{
+
+            font-size:35px;
+
+            margin-bottom:25px;
         }
 
-        .info-box p {
-            margin-bottom: 18px;
-            color: #555;
+        .info-box p{
+
+            margin-bottom:18px;
+
+            color:#666;
         }
 
-        iframe {
-            width: 100%;
-            height: 400px;
-            border: none;
-            border-radius: 25px;
+        iframe{
+
+            width:100%;
+
+            height:420px;
+
+            border:none;
+
+            border-radius:30px;
 
             box-shadow:
-                0 10px 25px rgba(0, 0, 0, 0.1);
+            0 10px 35px rgba(255,183,210,0.12);
         }
 
-        /* BUTTON */
+        /* =========================
+           NAVIGATION BUTTON
+        ========================= */
 
-        .page-navigation {
-            margin-top: 80px;
+        .page-navigation{
 
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
+            margin-top:90px;
+
+            display:flex;
+
+            justify-content:center;
+
+            gap:30px;
+
+            flex-wrap:wrap;
         }
 
-        .nav-btn {
-            padding: 15px 38px;
+        .nav-btn{
 
-            border-radius: 50px;
+            display:inline-block;
 
-            background: black;
+            padding:15px 38px;
 
-            color: white;
+            border-radius:50px;
 
-            font-weight: 600;
+            color:white;
 
-            transition: 0.3s;
+            font-weight:600;
+
+            background:
+            linear-gradient(
+                45deg,
+                #ff9fbe,
+                #ffc9d9
+            );
+
+            box-shadow:
+            0 5px 20px rgba(255,183,210,0.22);
+
+            transition:0.4s;
         }
 
-        .nav-btn:hover {
-            background: #ffd369;
-            color: black;
+        .nav-btn:hover{
 
-            transform: translateY(-5px);
+            transform:
+            translateY(-5px);
+
+            box-shadow:
+            0 8px 30px rgba(255,183,210,0.35);
         }
 
-        /* FOOTER */
+        /* =========================
+           FOOTER
+        ========================= */
 
-        footer {
-            background: #111;
-            color: white;
-            text-align: center;
-            padding: 60px 10%;
-            margin-top: 80px;
+        footer{
+
+            background:#f3ece8;
+
+            color:#333;
+
+            text-align:center;
+
+            padding:80px 10%;
         }
 
-        footer h2 {
-            font-size: 35px;
-            margin-bottom: 20px;
+        footer h2{
+
+            font-size:35px;
+
+            margin-bottom:20px;
         }
 
-        footer p {
-            color: #bbb;
-            line-height: 1.8;
+        footer p{
+
+            color:#777;
+
+            line-height:1.8;
         }
 
-        /* RESPONSIVE */
+        /* =========================
+           MOBILE
+        ========================= */
 
-        @media(max-width:768px) {
+        @media(max-width:768px){
 
-            .hero-content h1 {
-                font-size: 55px;
+            .hero-content h1{
+                font-size:60px;
             }
 
-            section {
-                padding: 80px 5%;
+            .container{
+                width:92%;
+            }
+
+            .gallery-content{
+                padding:22px;
             }
 
         }
+        /* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 768px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    section{
+        padding:70px 6%;
+    }
+
+    /* HERO */
+
+    .hero{
+        height:85vh;
+        background-position:center;
+    }
+
+    .hero-content h1{
+
+        font-size:52px;
+
+        letter-spacing:2px;
+
+        line-height:1.2;
+    }
+
+    .hero-content p{
+
+        font-size:16px;
+
+        padding:0 10px;
+    }
+
+    /* TITLE */
+
+    .title{
+        margin-bottom:45px;
+    }
+
+    .title h2{
+
+        font-size:34px;
+
+        line-height:1.4;
+    }
+
+    .title p{
+
+        font-size:15px;
+
+        line-height:1.9;
+    }
+
+    /* GRID */
+
+    .gallery{
+
+        grid-template-columns:1fr;
+
+        gap:25px;
+    }
+
+    .info-map{
+
+        grid-template-columns:1fr;
+    }
+
+    /* CARD */
+
+    .gallery-card{
+
+        border-radius:24px;
+    }
+
+    .gallery-card img{
+
+        height:220px;
+    }
+
+    .gallery-content{
+
+        padding:22px;
+    }
+
+    .gallery-content h3{
+
+        font-size:24px;
+    }
+
+    .gallery-content p{
+
+        font-size:15px;
+    }
+
+    /* INFO BOX */
+
+    .info-box{
+
+        padding:28px;
+    }
+
+    .info-box h3{
+
+        font-size:28px;
+    }
+
+    .info-box p{
+
+        font-size:15px;
+    }
+
+    /* MAP */
+
+    iframe{
+
+        height:320px;
+    }
+
+    /* BUTTON */
+
+    .page-navigation{
+
+        gap:15px;
+    }
+
+    .nav-btn{
+
+        width:100%;
+
+        text-align:center;
+
+        padding:14px 20px;
+
+        font-size:15px;
+    }
+
+    /* FOOTER */
+
+    footer{
+
+        padding:60px 6%;
+    }
+
+    footer h2{
+
+        font-size:28px;
+    }
+
+    footer p{
+
+        font-size:14px;
+    }
+
+}
+
     </style>
 
 </head>
@@ -264,6 +594,7 @@
             <h1>目白庭園</h1>
 
             <p>
+                静かな東京の自然空間
             </p>
 
         </div>
@@ -274,14 +605,20 @@
 
     <div class="container">
 
+        <!-- TITLE -->
+
         <div class="title">
 
             <h2>🌿 目白庭園について</h2>
 
             <p>
-                目白庭園は、静かで落ち着いた雰囲気が魅力の日本庭園です。
+
+                目白庭園は、
+                静かで落ち着いた雰囲気が魅力の日本庭園です。
+
                 四季によって違う景色を楽しむことができ、
-                特に春と秋はとても人気があります。
+                春と秋は特に人気があります。
+
             </p>
 
         </div>
@@ -289,6 +626,8 @@
         <!-- GALLERY -->
 
         <div class="gallery">
+
+            <!-- CARD 1 -->
 
             <div class="gallery-card">
 
@@ -298,12 +637,25 @@
 
                     <h3>🚶‍♂️ 入り口</h3>
 
-                    <p>目白庭園は、四季折々の美しい景色にあふれています。
-                        庭園のあらゆる場所で、自然と静かな風景の心地よい魅力を感じることができます。</p>
+                    <p>
+
+                        目白庭園は、
+                        四季折々の美しい景色にあふれています。
+
+                    </p>
+
+                    <p>
+
+                        庭園のあらゆる場所で、
+                        自然と静かな風景を楽しめます。
+
+                    </p>
 
                 </div>
 
             </div>
+
+            <!-- CARD 2 -->
 
             <div class="gallery-card">
 
@@ -311,17 +663,34 @@
 
                 <div class="gallery-content">
 
-                    <h3>🎯 中央</h3>
+                    <h3>🎯 中央の池</h3>
 
                     <p>
-                        中央の池：静かな水面が周囲の緑を映し出し、落ち着いた雰囲気を感じられます。
+
+                        静かな水面が
+                        周囲の緑を映し出します。
+
                     </p>
-                    <p>伝統建築：池のそばにある茶室「赤鳥庵」は、数寄屋造りの趣ある建物です。</p>
-                    <p>豊かな自然：庭園にはモミジや桜などが植えられ、四季ごとに異なる美しい景色を楽しめます。</p>
+
+                    <p>
+
+                        茶室「赤鳥庵」は、
+                        日本らしい伝統建築です。
+
+                    </p>
+
+                    <p>
+
+                        モミジや桜もあり、
+                        季節ごとの景色を楽しめます。
+
+                    </p>
 
                 </div>
 
             </div>
+
+            <!-- CARD 3 -->
 
             <div class="gallery-card">
 
@@ -330,14 +699,19 @@
                 <div class="gallery-content">
 
                     <h3>🌊 自然の滝</h3>
-                    
+
                     <p>
+
                         美しい自然と池があり、
-                        ゆっくり散歩を楽しむことができます。
+                        ゆっくり散歩を楽しめます。
+
                     </p>
+
                     <p>
+
                         東京の中でも静かな空間で、
                         リラックスできる場所です。
+
                     </p>
 
                 </div>
@@ -346,25 +720,50 @@
 
         </div>
 
-        <!-- INFO + MAP -->
+        <!-- INFO MAP -->
 
         <div class="info-map">
+
+            <!-- INFO -->
 
             <div class="info-box">
 
                 <h3>📍 情報</h3>
 
-                <p><strong>場所:</strong> 東京都豊島区目白</p>
+                <p>
 
-                <p><strong>アクセス:</strong> 目白駅から徒歩約5分</p>
+                    <strong>場所:</strong>
+                    東京都豊島区目白
 
-                <p><strong>おすすめ:</strong> 散歩・写真撮影・自然体験</p>
+                </p>
 
-                <p><strong>雰囲気:</strong> 静かで落ち着いた日本庭園</p>
+                <p>
+
+                    <strong>アクセス:</strong>
+                    目白駅から徒歩約5分
+
+                </p>
+
+                <p>
+
+                    <strong>おすすめ:</strong>
+                    散歩・写真撮影・自然体験
+
+                </p>
+
+                <p>
+
+                    <strong>雰囲気:</strong>
+                    静かで落ち着いた日本庭園
+
+                </p>
 
             </div>
 
+            <!-- MAP -->
+
             <iframe src="https://www.google.com/maps?q=Mejiro+Garden+Tokyo&output=embed">
+
             </iframe>
 
         </div>
@@ -373,12 +772,18 @@
 
         <div class="page-navigation">
 
-            <a href="mejiro.html" class="nav-btn">
+            <a href="mejiro.html"
+               class="nav-btn">
+
                 ⬅ 戻る
+
             </a>
 
-            <a href="university.html" class="nav-btn">
+            <a href="university.html"
+               class="nav-btn">
+
                 次へ ➜
+
             </a>
 
         </div>
@@ -392,8 +797,10 @@
         <h2>東京案内書</h2>
 
         <p>
+
             Tokyo Travel Guide <br>
             Made With ❤️ In Tokyo
+
         </p>
 
     </footer>
