@@ -5,745 +5,1170 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>東京案内書｜池袋・目白・東京観光ガイド</title>
-
-  <!-- SEO -->
-  <meta name="description" content="東京案内書は池袋と目白を紹介する東京旅行ガイドサイトです。観光スポット、文化、グルメ情報を掲載しています。">
-  <meta name="author" content="NTAT">
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="東京案内書 | Tokyo Travel">
-  <meta property="og:description" content="池袋と目白を紹介する東京観光ガイド">
-  <meta property="og:image" content="image/1.jpg">
-  <meta property="og:type" content="website">
+  <title>東京案内書 | Tokyo Travel</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap"
     rel="stylesheet">
 
   <style>
-
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      scroll-behavior:smooth;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
-    body{
-      font-family:"Poppins","Noto Sans JP",sans-serif;
+    body {
+      font-family: "Poppins", sans-serif;
+      background:
+        linear-gradient(to bottom,
+          #f8f4ef,
+          #efe6dc);
 
-      /* NEW SAKURA BACKGROUND */
+      color: #2b211b;
+
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    section {
+      padding: 120px 7%;
+    }
+
+    /* =========================
+           NAVBAR
+        ========================= */
+
+    nav {
+
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      padding: 22px 7%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
       background:
-      linear-gradient(
-        180deg,
-        #fff9fb 0%,
-        #fff3f7 35%,
-        #ffeef4 100%
-      );
+        rgba(248, 244, 239, 0.78);
 
-      overflow-x:hidden;
-      color:#4b4453;
-    }
-
-    img{
-      width:100%;
-      display:block;
-    }
-
-    a{
-      text-decoration:none;
-    }
-
-    section{
-      padding:100px 10%;
-    }
-
-    /* NAVBAR */
-
-    nav{
-      position:fixed;
-      top:0;
-      width:100%;
-      padding:20px 10%;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-
-      backdrop-filter:blur(16px);
-
-      background:rgba(255,255,255,0.18);
+      backdrop-filter: blur(18px);
 
       border-bottom:
-      1px solid rgba(255,255,255,0.35);
+        1px solid rgba(0, 0, 0, 0.05);
 
-      z-index:1000;
+      z-index: 9999;
     }
 
-    nav h1{
-      color:white;
-      font-size:28px;
-      font-weight:700;
+    .logo {
 
-      text-shadow:
-      0 3px 10px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
 
-    nav ul{
-      display:flex;
-      list-style:none;
-      gap:30px;
-    }
+    .logo-box {
 
-    nav a{
-      color:white;
-      font-weight:500;
-      transition:0.3s;
+      width: 55px;
+      height: 55px;
 
-      text-shadow:
-      0 2px 8px rgba(0,0,0,0.25);
-    }
-
-    nav a:hover{
-      color:#ffd7e8;
-    }
-
-    /* HERO */
-
-    .hero{
-      height:100vh;
+      border-radius: 18px;
 
       background:
-      linear-gradient(
-        rgba(255,192,203,0.18),
-        rgba(0,0,0,0.35)
-      ),
-      url("image/60.jpg") center/cover;
+        linear-gradient(135deg,
+          #c4452d,
+          #e8845c);
 
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
-      color:white;
-    }
+      color: white;
 
-    .hero-content h2{
-      font-size:80px;
-      margin-bottom:20px;
-      letter-spacing:3px;
+      font-size: 26px;
 
-      text-shadow:
-      0 8px 25px rgba(0,0,0,0.4);
-    }
-
-    .hero-content p{
-      font-size:22px;
-      margin-bottom:35px;
-      line-height:1.8;
-    }
-
-    .hero-content a{
-      padding:15px 40px;
-
-      background:
-      linear-gradient(
-        135deg,
-        #ffbfd6,
-        #ffcfe2
-      );
-
-      color:#5c4452;
-
-      border-radius:50px;
-      font-weight:600;
+      font-family: "Noto Serif JP", serif;
 
       box-shadow:
-      0 10px 25px rgba(255,182,193,0.35);
-
-      transition:0.4s;
+        0 10px 25px rgba(196, 69, 45, 0.25);
     }
 
-    .hero-content a:hover{
-      background:white;
+    .logo h1 {
+
+      font-size: 32px;
+
+      font-family: "Noto Serif JP", serif;
+
+      letter-spacing: 3px;
+    }
+
+    nav ul {
+
+      display: flex;
+      list-style: none;
+      gap: 40px;
+    }
+
+    nav ul li a {
+
+      position: relative;
+
+      font-size: 15px;
+
+      transition: 0.3s;
+    }
+
+    nav ul li a::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: -6px;
+
+      width: 0%;
+      height: 2px;
+
+      background: #c4452d;
+
+      transition: 0.4s;
+    }
+
+    nav ul li a:hover {
+
+      color: #c4452d;
+    }
+
+    nav ul li a:hover::after {
+
+      width: 100%;
+    }
+
+    /* =========================
+           HERO
+        ========================= */
+
+    .hero {
+
+      height: 100vh;
+
+      position: relative;
+
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.35),
+          rgba(0, 0, 0, 0.55)),
+        url("image/60.jpg") center/cover;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+      overflow: hidden;
+    }
+
+    .hero::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 600px;
+      height: 600px;
+
+      background:
+        radial-gradient(circle,
+          rgba(255, 255, 255, 0.18),
+          transparent);
+
+      top: -200px;
+      right: -150px;
+    }
+
+    .hero-content {
+
+      position: relative;
+      z-index: 2;
+
+      color: white;
+    }
+
+    .hero-content h2 {
+
+      font-size: 95px;
+
+      font-family: "Noto Serif JP", serif;
+
+      letter-spacing: 8px;
+
+      margin-bottom: 20px;
+
+      text-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-content p {
+
+      font-size: 20px;
+
+      line-height: 2;
+
+      margin-bottom: 40px;
+
+      color: #f3ece6;
+    }
+
+    .hero-btn {
+
+      display: inline-block;
+
+      padding: 16px 42px;
+
+      border-radius: 60px;
+
+      background:
+        linear-gradient(135deg,
+          #c4452d,
+          #e8845c);
+
+      color: white;
+
+      font-weight: 500;
+
+      transition: 0.4s;
+
+      box-shadow:
+        0 10px 25px rgba(196, 69, 45, 0.35);
+    }
+
+    .hero-btn:hover {
 
       transform:
-      translateY(-5px);
-    }
-
-    /* TITLE */
-
-    .title{
-      text-align:center;
-      margin-bottom:60px;
-    }
-
-    .title h2{
-      font-size:45px;
-      margin-bottom:15px;
-
-      color:#5f4b5b;
-    }
-
-    .title p{
-      color:#8c7a86;
-      font-size:18px;
-    }
-
-    /* ABOUT */
-
-    .about{
-      display:grid;
-      grid-template-columns:
-      repeat(auto-fit,minmax(320px,1fr));
-
-      gap:60px;
-      align-items:center;
-    }
-
-    .about img{
-      border-radius:30px;
+        translateY(-5px) scale(1.03);
 
       box-shadow:
-      0 12px 35px rgba(255,182,193,0.18);
+        0 15px 35px rgba(196, 69, 45, 0.45);
     }
 
-    .about-text h3{
-      font-size:38px;
-      margin-bottom:25px;
+    /* =========================
+           TITLE
+        ========================= */
 
-      color:#5f4b5b;
+    .section-title {
+
+      text-align: center;
+
+      margin-bottom: 80px;
     }
 
-    .about-text p{
-      color:#6d626a;
-      line-height:2;
-      font-size:17px;
+    .section-title span {
+
+      color: #c4452d;
+
+      letter-spacing: 3px;
+
+      font-size: 14px;
     }
 
-    /* PLACE */
+    .section-title h2 {
 
-    .place{
-      display:grid;
+      font-size: 56px;
+
+      margin-top: 15px;
+
+      margin-bottom: 15px;
+
+      font-family: "Noto Serif JP", serif;
+    }
+
+    .section-title p {
+
+      color: #74685d;
+
+      font-size: 17px;
+    }
+
+    /* =========================
+           CARDS
+        ========================= */
+
+    .travel-grid {
+
+      display: grid;
+
       grid-template-columns:
-      repeat(auto-fit,minmax(320px,1fr));
+        repeat(3, 1fr);
 
-      gap:50px;
-      align-items:center;
-
-      margin-bottom:100px;
+      gap: 35px;
     }
 
-    .place img{
-      border-radius:30px;
-      height:400px;
-      object-fit:cover;
+    .travel-card {
 
-      transition:0.5s;
+      background:
+        rgba(255, 255, 255, 0.65);
+
+      backdrop-filter: blur(12px);
+
+      border-radius: 35px;
+
+      overflow: hidden;
+
+      transition: 0.45s;
 
       box-shadow:
-      0 12px 35px rgba(255,182,193,0.18);
+        0 20px 40px rgba(0, 0, 0, 0.08);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.5);
     }
 
-    .place img:hover{
-      transform:scale(1.03);
+    .travel-card:hover {
+
+      transform:
+        translateY(-10px);
+
+      box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.12);
     }
 
-    .place-content h3{
-      font-size:42px;
-      margin-bottom:20px;
+    /* IMAGE */
 
-      color:#5f4b5b;
+    .travel-image {
+
+      height: 300px;
+
+      overflow: hidden;
+
+      position: relative;
     }
 
-    .place-content p{
-      color:#72656f;
-      line-height:2;
-      margin-bottom:30px;
+    .travel-image img {
+
+      height: 100%;
+      object-fit: cover;
+
+      transition: 0.6s;
+    }
+
+    .travel-card:hover img {
+
+      transform: scale(1.08);
+    }
+
+    .travel-tag {
+
+      position: absolute;
+
+      top: 18px;
+      left: 18px;
+
+      background:
+        rgba(255, 255, 255, 0.9);
+
+      padding: 8px 18px;
+
+      border-radius: 50px;
+
+      font-size: 13px;
+
+      color: #c4452d;
+
+      font-weight: 600;
+    }
+
+    /* CONTENT */
+
+    .travel-info {
+
+      padding: 35px 30px 40px;
+    }
+
+    .travel-info h3 {
+
+      font-size: 38px;
+
+      margin-bottom: 18px;
+
+      text-align: center;
+
+      font-family: "Noto Serif JP", serif;
+    }
+
+    .travel-info p {
+
+      text-align: center;
+
+      line-height: 2;
+
+      color: #5b5046;
+
+      font-size: 15px;
+
+      margin-bottom: 10px;
+    }
+
+    /* LINE */
+
+    .mini-line {
+
+      width: 70px;
+      height: 3px;
+
+      background:
+        linear-gradient(to right,
+          #c4452d,
+          #efb18f);
+
+      margin: 25px auto;
     }
 
     /* BUTTON */
 
-    .btn{
-      display:inline-block;
-      padding:14px 35px;
+    .card-btn {
 
-      border-radius:50px;
+      display: block;
 
-      background:
-      linear-gradient(
-        135deg,
-        #ffbfd6,
-        #ffcfe2
-      );
+      width: 190px;
 
-      color:#5c4452;
+      margin: auto;
 
-      font-weight:600;
+      padding: 14px 20px;
 
-      box-shadow:
-      0 10px 25px rgba(255,182,193,0.3);
+      text-align: center;
 
-      transition:0.3s;
+      border-radius: 50px;
+
+      background: #2b211b;
+
+      color: white;
+
+      transition: 0.4s;
     }
 
-    .btn:hover{
-      background:white;
+    .card-btn:hover {
 
-      transform:
-      translateY(-5px);
-    }
+      background: #c4452d;
 
-    /* FOOTER */
-
-    footer{
-
-      background:
-      linear-gradient(
-        135deg,
-        #f8dce7,
-        #f6e4ec
-      );
-
-      color:#5f4b5b;
-
-      text-align:center;
-      padding:60px 10%;
-
-      border-top:
-      1px solid rgba(255,255,255,0.5);
-    }
-
-    footer h2{
-      font-size:35px;
-      margin-bottom:20px;
-    }
-
-    footer p{
-      color:#7a6c75;
-      line-height:1.8;
+      transform: translateY(-3px);
     }
 
     /* =========================
-       JAPAN STYLE LOGIN
-    ========================= */
+           FLOATING SHAPES
+        ========================= */
 
-    #login-screen{
+    .shape {
 
-      position:fixed;
-      inset:0;
+      position: absolute;
 
-      z-index:999999;
+      border-radius: 50%;
 
-      overflow:hidden;
+      filter: blur(60px);
 
-      background:
-      url("https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=1974&auto=format&fit=crop")
-      center/cover no-repeat;
-
-      display:flex;
-      justify-content:center;
-      align-items:center;
+      z-index: -1;
     }
 
-    .overlay{
+    .shape1 {
 
-      position:absolute;
-      inset:0;
+      width: 300px;
+      height: 300px;
 
       background:
-      linear-gradient(
-        rgba(255,183,210,0.2),
-        rgba(0,0,0,0.55)
-      );
+        rgba(196, 69, 45, 0.10);
 
-      backdrop-filter:blur(4px);
+      top: 900px;
+      left: -120px;
     }
 
-    .japan-login{
+    .shape2 {
 
-      position:relative;
-
-      width:430px;
-      max-width:90%;
-
-      padding:60px 45px;
-
-      text-align:center;
-
-      border-radius:35px;
+      width: 260px;
+      height: 260px;
 
       background:
-      rgba(255,255,255,0.14);
+        rgba(255, 196, 140, 0.18);
+
+      right: -100px;
+      top: 1500px;
+    }
+
+    /* =========================
+           FOOTER
+        ========================= */
+
+    footer {
+
+      background:
+        linear-gradient(to right,
+          #1c1612,
+          #2b211b);
+
+      color: white;
+
+      text-align: center;
+
+      padding: 80px 7%;
+    }
+
+    footer h2 {
+
+      font-size: 40px;
+
+      margin-bottom: 18px;
+
+      font-family: "Noto Serif JP", serif;
+    }
+
+    footer p {
+
+      color: #cfc7c1;
+
+      line-height: 2;
+    }
+
+    /* =========================
+           MOBILE
+        ========================= */
+
+    @media(max-width:1100px) {
+
+      .travel-grid {
+
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+    @media(max-width:768px) {
+
+      nav {
+
+        flex-direction: column;
+
+        gap: 20px;
+
+        padding: 18px 5%;
+      }
+
+      nav ul {
+
+        gap: 18px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+      }
+
+      .hero-content h2 {
+
+        font-size: 55px;
+
+        line-height: 1.2;
+      }
+
+      .hero-content p {
+
+        font-size: 16px;
+      }
+
+      .section-title h2 {
+
+        font-size: 40px;
+      }
+
+      .travel-image {
+
+        height: 240px;
+      }
+
+      .travel-info {
+
+        padding: 28px 22px 35px;
+      }
+
+      .travel-info h3 {
+
+        font-size: 30px;
+      }
+
+      .travel-info p {
+
+        font-size: 14px;
+      }
+
+    }
+
+    /* =======================
+           MAP
+        ======================= */
+
+    .map-box {
+
+      overflow: hidden;
+
+      border-radius: 35px;
+
+      box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.12);
+    }
+
+    iframe {
+
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+
+    /* =======================
+   FOOD SECTION
+======================= */
+
+    #foods {
+
+      position: relative;
+    }
+
+    /* TITLE */
+
+    #foods .section-title {
+
+      text-align: center;
+
+      margin-bottom: 90px;
+    }
+
+    #foods .section-title span {
+
+      display: inline-block;
+
+      color: #c4452d;
+
+      font-size: 14px;
+
+      letter-spacing: 4px;
+
+      margin-bottom: 15px;
+
+      position: relative;
+    }
+
+    #foods .section-title span::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 60px;
+      height: 2px;
+
+      background: #c4452d;
+
+      top: 50%;
+      left: 110%;
+
+      transform: translateY(-50%);
+    }
+
+    #foods .section-title h2 {
+
+      font-size: 58px;
+
+      font-family: "Noto Serif JP", serif;
+
+      margin-bottom: 18px;
+
+      color: #2b211b;
+    }
+
+    #foods .section-title p {
+
+      font-size: 17px;
+
+      color: #74685d;
+
+      letter-spacing: 1px;
+    }
+
+    /* GRID */
+
+    #foods .card-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(auto-fit, minmax(320px, 1fr));
+
+      gap: 40px;
+    }
+
+    /* CARD */
+
+    #foods .card {
+
+      position: relative;
+
+      overflow: hidden;
+
+      border-radius: 35px;
+
+      background:
+        rgba(255, 255, 255, 0.72);
+
+      backdrop-filter: blur(14px);
 
       border:
-      1px solid rgba(255,255,255,0.2);
+        1px solid rgba(255, 255, 255, 0.45);
 
-      backdrop-filter:blur(20px);
-
-      overflow:hidden;
+      transition: 0.5s;
 
       box-shadow:
-      0 0 45px rgba(255,182,193,0.25);
-
-      animation:fadeUp 1s ease;
+        0 18px 45px rgba(0, 0, 0, 0.08);
     }
 
-    .japan-login::before{
-
-      content:"";
-
-      position:absolute;
-      inset:0;
-
-      background:
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(255,255,255,0.02) 3px
-      );
-
-      pointer-events:none;
-    }
-
-    .top-text{
-
-      color:#ffe0ec;
-
-      letter-spacing:5px;
-
-      font-size:12px;
-
-      margin-bottom:20px;
-    }
-
-    .japan-login h3{
-
-      font-size:52px;
-
-      color:white;
-
-      letter-spacing:5px;
-
-      margin-bottom:20px;
-
-      font-weight:700;
-
-      text-shadow:
-      0 0 20px rgba(255,255,255,0.18);
-    }
-
-    .line{
-
-      width:90px;
-      height:3px;
-
-      margin:auto;
-      margin-bottom:30px;
-
-      border-radius:20px;
-
-      background:
-      linear-gradient(
-        45deg,
-        #ffb7d2,
-        #ffffff
-      );
-    }
-
-    .desc{
-
-      color:#f0f0f0;
-
-      line-height:2;
-
-      font-size:15px;
-
-      margin-bottom:35px;
-    }
-
-    .input-box{
-
-      display:flex;
-      align-items:center;
-
-      gap:15px;
-
-      padding:0 18px;
-
-      margin-bottom:28px;
-
-      border-radius:18px;
-
-      background:
-      rgba(255,255,255,0.08);
-
-      border:
-      1px solid rgba(255,255,255,0.08);
-
-      transition:0.4s;
-    }
-
-    .input-box:focus-within{
-
-      border:1px solid #ffb7d2;
-
-      box-shadow:
-      0 0 25px rgba(255,183,210,0.35);
-    }
-
-    .input-box span{
-      color:#ffe3ee;
-      font-size:18px;
-    }
-
-    .input-box input{
-
-      width:100%;
-
-      padding:20px 0;
-
-      border:none;
-      outline:none;
-
-      background:transparent;
-
-      color:white;
-
-      font-size:16px;
-    }
-
-    .input-box input::placeholder{
-      color:#ddd;
-    }
-
-    .japan-login button{
-
-      width:100%;
-
-      padding:18px;
-
-      border:none;
-
-      border-radius:18px;
-
-      font-size:16px;
-
-      font-weight:600;
-
-      letter-spacing:2px;
-
-      color:white;
-
-      cursor:pointer;
-
-      background:
-      linear-gradient(
-        45deg,
-        #ff9fc7,
-        #ffc7db
-      );
-
-      transition:0.45s;
-
-      box-shadow:
-      0 0 30px rgba(255,183,210,0.35);
-    }
-
-    .japan-login button:hover{
+    #foods .card:hover {
 
       transform:
-      translateY(-4px);
+        translateY(-12px);
 
       box-shadow:
-      0 0 40px rgba(255,183,210,0.55);
+        0 28px 55px rgba(0, 0, 0, 0.14);
     }
 
-    #error{
+    /* IMAGE */
 
-      margin-top:18px;
+    #foods .card-image {
 
-      color:#ffd2e3;
+      position: relative;
 
-      font-size:14px;
+      height: 280px;
+
+      overflow: hidden;
     }
 
-    /* SAKURA */
+    #foods .card-image img {
 
-    .sakura{
+      width: 100%;
+      height: 100%;
 
-      position:absolute;
+      object-fit: cover;
 
-      width:18px;
-      height:18px;
-
-      background:#ffd6e7;
-
-      border-radius:50% 0 50% 50%;
-
-      opacity:0.5;
-
-      animation:fall linear infinite;
+      transition: 0.7s;
     }
 
-    .sakura1{
-      left:15%;
-      top:-20px;
-      animation-duration:12s;
+    #foods .card:hover .card-image img {
+
+      transform: scale(1.1);
     }
 
-    .sakura2{
-      left:50%;
-      top:-30px;
-      animation-duration:15s;
+    /* OVERLAY */
+
+    #foods .card-image::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      bottom: 0;
+
+      width: 100%;
+      height: 100%;
+
+      background:
+        linear-gradient(to top,
+          rgba(0, 0, 0, 0.45),
+          transparent 60%);
     }
 
-    .sakura3{
-      left:80%;
-      top:-25px;
-      animation-duration:10s;
+    /* FOOD TAG */
+
+    .food-tag {
+
+      position: absolute;
+
+      top: 20px;
+      left: 20px;
+
+      background:
+        rgba(255, 255, 255, 0.92);
+
+      color: #c4452d;
+
+      padding: 8px 18px;
+
+      border-radius: 50px;
+
+      font-size: 13px;
+
+      font-weight: 600;
+
+      z-index: 2;
+
+      box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.08);
     }
 
-    @keyframes fall{
+    /* CONTENT */
 
-      0%{
-        transform:
-        translateY(0)
-        rotate(0deg);
-      }
+    #foods .card-content {
 
-      100%{
-        transform:
-        translateY(110vh)
-        rotate(360deg);
-      }
+      padding: 35px 30px 40px;
     }
 
-    @keyframes fadeUp{
+    #foods .card-content h3 {
 
-      from{
-        opacity:0;
-        transform:translateY(40px);
-      }
+      font-size: 34px;
 
-      to{
-        opacity:1;
-        transform:translateY(0);
-      }
+      margin-bottom: 18px;
+
+      font-family: "Noto Serif JP", serif;
+
+      color: #2b211b;
+    }
+
+    #foods .card-content p {
+
+      font-size: 15px;
+
+      line-height: 2;
+
+      color: #5b5046;
+
+      margin-bottom: 25px;
+    }
+
+    /* MINI LINE */
+
+    .food-line {
+
+      width: 70px;
+      height: 3px;
+
+      border-radius: 20px;
+
+      background:
+        linear-gradient(to right,
+          #c4452d,
+          #efb18f);
+
+      margin-bottom: 25px;
+    }
+
+    /* BUTTON */
+
+    .food-btn {
+
+      display: inline-block;
+
+      padding: 13px 28px;
+
+      border-radius: 50px;
+
+      background:
+        linear-gradient(135deg,
+          #c4452d,
+          #e8845c);
+
+      color: white;
+
+      font-size: 14px;
+
+      transition: 0.4s;
+
+      box-shadow:
+        0 10px 25px rgba(196, 69, 45, 0.25);
+    }
+
+    .food-btn:hover {
+
+      transform:
+        translateY(-4px);
+
+      box-shadow:
+        0 15px 35px rgba(196, 69, 45, 0.35);
+    }
+
+    /* FLOAT LIGHT */
+
+    #foods::before {
+
+      content: "";
+
+      position: absolute;
+
+      width: 320px;
+      height: 320px;
+
+      background:
+        rgba(196, 69, 45, 0.08);
+
+      border-radius: 50%;
+
+      filter: blur(80px);
+
+      top: 100px;
+      left: -120px;
+
+      z-index: -1;
+    }
+
+    #foods::after {
+
+      content: "";
+
+      position: absolute;
+
+      width: 250px;
+      height: 250px;
+
+      background:
+        rgba(242, 189, 221, 0.16);
+
+      border-radius: 50%;
+
+      filter: blur(80px);
+
+      bottom: 50px;
+      right: -100px;
+
+      z-index: -1;
     }
 
     /* MOBILE */
 
-    @media(max-width:768px){
+    @media(max-width:768px) {
 
-      nav{
-        padding:16px 5%;
+      #foods .section-title h2 {
+
+        font-size: 42px;
       }
 
-      nav h1{
-        font-size:18px;
+      #foods .card-image {
+
+        height: 230px;
       }
 
-      nav ul{
-        gap:15px;
+      #foods .card-content {
+
+        padding: 28px 22px 35px;
       }
 
-      nav a{
-        font-size:13px;
+      #foods .card-content h3 {
+
+        font-size: 28px;
       }
 
-      section{
-        padding:70px 6%;
+      #foods .card-content p {
+
+        font-size: 14px;
       }
 
-      .hero{
-        height:90vh;
-      }
-
-      .hero-content h2{
-        font-size:52px;
-        line-height:1.2;
-      }
-
-      .title h2{
-        font-size:34px;
-      }
-
-      .about-text h3,
-      .place-content h3{
-        font-size:30px;
-      }
-
-      .place img{
-        height:260px;
-      }
-
-      .japan-login{
-        padding:50px 30px;
-      }
-
-      .japan-login h3{
-        font-size:42px;
-      }
-
-      footer{
-        padding:50px 6%;
-      }
     }
 
+    /* =========================
+   LOGIN SCREEN
+========================= */
+
+    #login-screen {
+
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100vh;
+
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.55),
+          rgba(0, 0, 0, 0.7)),
+        url("image/60.jpg") center/cover;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      z-index: 999999;
+    }
+
+    /* LOGIN BOX */
+
+    .login-box {
+
+      width: 420px;
+
+      padding: 60px 45px;
+
+      border-radius: 35px;
+
+      background:
+        rgba(255, 255, 255, 0.12);
+
+      backdrop-filter: blur(18px);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.2);
+
+      text-align: center;
+
+      box-shadow:
+        0 25px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    .login-box h1 {
+
+      color: white;
+
+      font-size: 48px;
+
+      margin-bottom: 18px;
+
+      font-family: "Noto Serif JP", serif;
+
+      letter-spacing: 4px;
+    }
+
+    .login-box p {
+
+      color: #f3ece6;
+
+      margin-bottom: 28px;
+
+      line-height: 1.8;
+    }
+
+    /* INPUT */
+
+    .login-box input {
+
+      width: 100%;
+
+      padding: 16px 20px;
+
+      border: none;
+
+      outline: none;
+
+      border-radius: 50px;
+
+      background:
+        rgba(255, 255, 255, 0.92);
+
+      font-size: 15px;
+
+      margin-bottom: 22px;
+    }
+
+    /* BUTTON */
+
+    .login-box button {
+
+      width: 100%;
+
+      padding: 15px;
+
+      border: none;
+
+      border-radius: 50px;
+
+      background:
+        linear-gradient(135deg,
+          #c4452d,
+          #e8845c);
+
+      color: white;
+
+      font-size: 15px;
+
+      cursor: pointer;
+
+      transition: 0.4s;
+
+      box-shadow:
+        0 10px 25px rgba(196, 69, 45, 0.35);
+    }
+
+    .login-box button:hover {
+
+      transform:
+        translateY(-3px);
+
+      box-shadow:
+        0 15px 35px rgba(196, 69, 45, 0.45);
+    }
+
+    /* ERROR */
+
+    #error-message {
+
+      margin-top: 18px;
+
+      color: #ffb3b3;
+
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:600px) {
+
+      .login-box {
+
+        width: 90%;
+
+        padding: 45px 30px;
+      }
+
+      .login-box h1 {
+
+        font-size: 38px;
+      }
+
+    }
   </style>
+
 </head>
 
 <body>
-
-  <!-- LOGIN SCREEN -->
+  <!-- =========================
+     PASSWORD SCREEN
+========================= -->
 
   <div id="login-screen">
 
-    <div class="overlay"></div>
+    <div class="login-box">
 
-    <div class="sakura sakura1"></div>
-    <div class="sakura sakura2"></div>
-    <div class="sakura sakura3"></div>
+      <h1>東京案内書</h1>
 
-    <div class="japan-login">
-
-      <p class="top-text">
-        東京プライベートサイト
+      <p>
+        Private Tokyo Travel Website
       </p>
 
-      <h3>東京案内書</h3>
-
-      <div class="line"></div>
-
-      <p class="desc">
-        静かな東京の旅へ。<br>
-        パスワードを入力してください。
-      </p>
-
-      <div class="input-box">
-
-        <span>鍵</span>
-
-        <input
-          type="password"
-          id="password"
-          placeholder="Password"
-        >
-
-      </div>
+      <input type="password" id="password" placeholder="Password" onkeydown="handleEnter(event)">
 
       <button onclick="checkPassword()">
-        入場する
+        ENTER
       </button>
 
-      <p id="error"></p>
+      <p id="error-message"></p>
 
     </div>
 
@@ -753,124 +1178,266 @@
 
   <nav>
 
-    <h1>東京案内書 - 通信記者NTAT</h1>
+    <div class="logo">
+
+      <div class="logo-box">
+        TK
+      </div>
+
+      <h1>東京案内書 - フリージアの通信記者NTAT</h1>
+
+    </div>
 
     <ul>
-      <li><a href="#home">HOME</a></li>
-      <li><a href="#tokyo">TOKYO</a></li>
-      <li><a href="#places">PLACES</a></li>
-      <li><a href="#gallery">GALLERY</a></li>
+
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="ikebukuro.html">池袋</a></li>
+      <li><a href="mejiro.html">目白</a></li>
+      <li><a href="login.html">Login</a></li>
+
     </ul>
 
   </nav>
 
   <!-- HERO -->
 
-  <section class="hero" id="home">
+  <section class="hero">
 
     <div class="hero-content">
 
       <h2>TOKYO TRAVEL</h2>
 
-      <a href="#tokyo">
-        Explore Tokyo
+      <p>
+        池袋・目白・東京の静かな美しさを紹介する旅サイト
+      </p>
+
+      <a href="#" class="hero-btn">
+        東京を見る
       </a>
 
     </div>
 
   </section>
 
-  <!-- TOKYO -->
+  <!-- SHAPES -->
 
-  <section id="tokyo">
-
-    <div class="title">
-
-      <h2>東京について</h2>
-
-      <p>
-        私の目から見た東京
-      </p>
-
-    </div>
-
-    <div class="about">
-
-      <img src="image/58.jpg" alt="東京の風景">
-
-      <div class="about-text">
-
-        <h3>東京へようこそ🌸</h3>
-
-        <p>
-          Tokyoは日本のにぎやかな首都です。
-          東京には、ネオンが光る高いビルや昔からあるお寺など、
-          近代的なものと伝統的なものがあります。
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
+  <div class="shape shape1"></div>
+  <div class="shape shape2"></div>
 
   <!-- PLACES -->
 
-  <section id="places">
+  <section>
 
-    <div class="title">
+    <div class="section-title">
+
+      <span>TOKYO GUIDE</span>
 
       <h2>観光スポット</h2>
 
       <p>
-        東京でのお気に入りの場所
+        東京でお気に入りの場所
       </p>
 
     </div>
 
-    <div class="place">
+    <div class="travel-grid">
+      <!-- IKEBUKURO -->
 
-      <img src="image/41.jpg" alt="池袋の夜景">
+      <div class="travel-card">
 
-      <div class="place-content">
+        <div class="travel-image">
 
-        <h3>池袋</h3>
+          <img src="image/41.jpg" alt="目白">
 
-        <p>
-          池袋は東京を代表する人気エリアです。
-        </p>
+          <div class="travel-tag">
+            IKEBUKURO
+          </div>
 
-        <a href="ikebukuro.html" class="btn">
-          もっと見る
-        </a>
+        </div>
+
+        <div class="travel-info">
+
+          <h3>池袋</h3>
+
+          <p>
+            池袋は東京を代表する にぎやかなエリアです。
+            ショッピング・アニメ・ グルメなどが楽しめます。
+            伝統的な神社もあり、 都会と文化が共存する街です。
+          </p>
+
+          <p>
+            日本庭園や散歩道を
+            ゆっくり楽しめます。
+          </p>
+
+          <div class="mini-line"></div>
+
+          <a href="ikebukuro.html" class="card-btn">
+            もっと見る
+          </a>
+
+        </div>
+
+      </div>
+
+      <!-- MEJIRO -->
+
+      <div class="travel-card">
+
+        <div class="travel-image">
+
+          <img src="image/66.jpg" alt="学習院大学">
+
+          <div class="travel-tag">
+            MEJIRO
+          </div>
+
+        </div>
+
+        <div class="travel-info">
+
+          <h3>目白</h3>
+
+          <p>
+            メジロは東京の中でも 静かで落ち着いた雰囲気がある街です。
+            美しい庭園やカフェ、 公園などがあり、 ゆっくり散歩を楽しめます。
+
+          <p>
+            池袋から近いですが、 都会とは違う穏やかな魅力があります。
+            静かな東京を感じたい人に おすすめです。
+          </p>
+          </p>
+
+          <div class="mini-line"></div>
+
+          <a href="mejiro.html" class="card-btn">
+            もっと見る
+          </a>
+
+        </div>
 
       </div>
 
     </div>
 
-    <div class="place">
+  </section>
+  <!-- FOOD -->
 
-      <div class="place-content">
+  <section id="foods">
 
-        <h3>目白</h3>
+    <div class="section-title">
 
-        <p>
-          静かで自然が多い落ち着いた場所です。
-        </p>
+      <span>JAPANESE FOOD</span>
 
-        <a href="mejiro.html" class="btn">
-          もっと見る
-        </a>
+      <h2>東京グルメ</h2>
+
+      <p>
+        東京で人気の食べ物
+      </p>
+
+    </div>
+
+    <div class="card-grid">
+
+      <!-- RAMEN -->
+
+      <div class="card">
+
+        <div class="card-image">
+
+          <img src="image/64.jpg" alt="Ramen">
+
+        </div>
+
+        <div class="card-content">
+
+          <h3>ラーメン</h3>
+
+          <p>
+            ラーメンは日本でとても人気のある料理です。
+            濃厚なスープともちもちした麺が魅力で、
+            東京には多くの有名ラーメン店があります。
+          </p>
+
+        </div>
 
       </div>
 
-      <img src="image/43.jpg" alt="目白の庭園">
+      <!-- SUSHI -->
+
+      <div class="card">
+
+        <div class="card-image">
+
+          <img src="image/63.jpg" alt="Sushi">
+
+        </div>
+
+        <div class="card-content">
+
+          <h3>寿司</h3>
+          <p>
+            寿司は新鮮な魚とご飯を使った
+            日本を代表する伝統料理です。
+            東京では本格的な寿司を楽しむことができます。
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- MATCHA -->
+
+      <div class="card">
+
+        <div class="card-image">
+
+          <img src="image/62.jpg" alt="Matcha">
+
+        </div>
+
+        <div class="card-content">
+
+          <h3>抹茶スイーツ</h3>
+
+          <p>
+            抹茶は日本の伝統的なお茶で、
+            香りと美しい緑色が人気です。
+            抹茶アイスやケーキなどのスイーツも有名です。
+          </p>
+
+        </div>
+
+      </div>
 
     </div>
 
   </section>
 
-  <!-- FOOTER -->
+  <!-- MAP -->
+
+  <section id="map">
+
+    <div class="section-title">
+
+      <span>MAP</span>
+
+      <h2>東京マップ</h2>
+
+      <p>
+        東京の位置を見る
+      </p>
+
+    </div>
+
+    <div class="map-box">
+
+      <iframe src="https://www.google.com/maps?q=Tokyo&output=embed">
+      </iframe>
+
+    </div>
+
+  </section>
 
   <footer>
 
@@ -882,26 +1449,41 @@
     </p>
 
   </footer>
+  <!-- =========================
+     SCRIPT
+========================= -->
 
   <script>
 
-    function checkPassword(){
+    function checkPassword() {
+      function handleEnter(event) {
 
-      let password =
-      document.getElementById("password").value;
+        if (event.key === "Enter") {
 
-      if(password === "freesiaNTAT"){
+          checkPassword();
+        }
 
-        document.getElementById(
-          "login-screen"
-        ).style.display = "none";
+      }
 
-      }else{
+      const password =
+        document.getElementById("password").value;
 
-        document.getElementById(
-          "error"
-        ).innerText = "Wrong Password";
+      const loginScreen =
+        document.getElementById("login-screen");
 
+      const error =
+        document.getElementById("error-message");
+
+      // PASSWORD
+
+      if (password === "freesiaNTAT") {
+
+        loginScreen.style.display = "none";
+
+      } else {
+
+        error.innerHTML =
+          "パスワードが違います";
       }
 
     }

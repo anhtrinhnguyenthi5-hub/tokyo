@@ -1,205 +1,333 @@
+<!-- =========================
+   SUNSHINE 60 PAGE
+========================= -->
+
 <!DOCTYPE html>
 <html lang="ja">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>サンシャイン60 | 東京旅行</title>
 
-    <style>
-        /* =========================
-   RESET
-========================= */
+    <!-- FONT -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        html {
             scroll-behavior: smooth;
         }
 
         body {
 
-            background:
-                linear-gradient(to bottom,
-                    #f8fafc,
-                    #ffffff,
-                    #fff7f7);
+            font-family:
+                "Poppins",
+                sans-serif;
 
-            color: #333;
+            background: #f5f1ec;
 
-            line-height: 1.8;
+            color: #2b211b;
+
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        section {
+            padding: 110px 7%;
         }
 
         /* =========================
-   HERO
-========================= */
+       NAVBAR
+    ========================= */
 
-        .hero {
-            position: relative;
+        nav {
 
-            height: 85vh;
+            position: fixed;
 
-            overflow: hidden;
-        }
+            top: 0;
+            left: 0;
 
-        .hero img {
             width: 100%;
-            height: 100%;
 
-            object-fit: cover;
+            padding: 22px 7%;
 
-            filter: brightness(65%);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(245, 241, 236, 0.88);
+
+            backdrop-filter: blur(12px);
+
+            z-index: 999;
         }
 
-        .hero::after {
-            content: "";
+        .logo {
 
-            position: absolute;
-            inset: 0;
-
-            background:
-                linear-gradient(to right,
-                    rgba(0, 0, 0, 0.65),
-                    rgba(0, 0, 0, 0.15));
+            display: flex;
+            align-items: center;
+            gap: 16px;
         }
 
-        .hero-text {
-            position: absolute;
+        .logo-box {
 
-            top: 50%;
-            left: 8%;
+            width: 50px;
+            height: 50px;
 
-            transform: translateY(-50%);
+            background: #d94a2f;
 
-            z-index: 5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             color: white;
+
+            font-size: 24px;
+
+            font-family: "Noto Serif JP", serif;
         }
 
-        .hero-text h1 {
+        .logo h1 {
+
+            font-size: 30px;
+
+            font-family: "Noto Serif JP", serif;
+
+            letter-spacing: 3px;
+        }
+
+        nav ul {
+
+            display: flex;
+            list-style: none;
+            gap: 40px;
+        }
+
+        nav ul li a {
+
+            font-size: 16px;
+
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+
+            color: #d94a2f;
+        }
+
+        /* =========================
+       HERO
+    ========================= */
+
+        .hero {
+
+            height: 100vh;
+
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.35),
+                    rgba(0, 0, 0, 0.45)),
+                url("image/67.jpg") center/cover;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            color: white;
+
+            padding: 0 7%;
+        }
+
+        .hero-content h2 {
 
             font-size: 90px;
+
+            font-family: "Noto Serif JP", serif;
 
             letter-spacing: 8px;
 
             margin-bottom: 20px;
-
-            font-weight: 900;
         }
 
-        .hero-text p {
+        .hero-content p {
 
-            font-size: 24px;
+            font-size: 22px;
 
-            color: #f1f1f1;
-        }
-
-        /* =========================
-   CONTAINER
-========================= */
-
-        .container {
-            width: 90%;
-            max-width: 1300px;
-
-            margin: auto;
-
-            padding: 100px 0;
+            line-height: 2;
         }
 
         /* =========================
-   DESCRIPTION
-========================= */
+       TITLE
+    ========================= */
 
-        .description {
-
-            background: white;
-
-            padding: 70px;
-
-            border-radius: 35px;
-
-            margin-bottom: 90px;
-
-            box-shadow:
-                0 10px 35px rgba(0, 0, 0, 0.08);
+        .section-title {
 
             text-align: center;
+
+            margin-bottom: 70px;
         }
 
-        .description h2 {
+        .section-title h2 {
 
-            font-size: 48px;
+            font-size: 52px;
 
-            margin-bottom: 30px;
-
-            color: #111;
-        }
-
-        .description p {
-
-            font-size: 18px;
-
-            color: #666;
+            font-family: "Noto Serif JP", serif;
 
             margin-bottom: 15px;
         }
 
-        /* =========================
-   QUOTE
-========================= */
+        .section-title p {
 
-        .quote {
+            color: #7a6d63;
 
-            text-align: center;
-
-            margin-bottom: 100px;
-        }
-
-        .quote h2 {
-
-            font-size: 38px;
-
-            color: #ff7aa2;
-
-            font-style: italic;
-
-            line-height: 1.6;
+            font-size: 17px;
         }
 
         /* =========================
-   GALLERY
-========================= */
+       ABOUT
+    ========================= */
 
-        .gallery {
+        .about {
 
             display: grid;
 
             grid-template-columns:
                 repeat(auto-fit, minmax(320px, 1fr));
 
-            gap: 35px;
+            gap: 60px;
 
-            margin-bottom: 100px;
+            align-items: center;
+        }
+
+        .about-image {
+
+            overflow: hidden;
+
+            border-radius: 28px;
+        }
+
+        .about-image img {
+
+            height: 500px;
+
+            object-fit: cover;
+
+            transition: 0.5s;
+        }
+
+        .about-image:hover img {
+
+            transform: scale(1.05);
+        }
+
+        .about-text {
+
+            background: #f8f5f1;
+
+            padding: 50px;
+
+            position: relative;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .about-text::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 18px;
+            left: 18px;
+
+            width: 25px;
+            height: 25px;
+
+            border-top: 2px solid #d94a2f;
+            border-left: 2px solid #d94a2f;
+        }
+
+        .about-text::after {
+
+            content: "";
+
+            position: absolute;
+
+            right: 18px;
+            bottom: 18px;
+
+            width: 25px;
+            height: 25px;
+
+            border-right: 2px solid #d94a2f;
+            border-bottom: 2px solid #d94a2f;
+        }
+
+        .about-text h3 {
+
+            font-size: 42px;
+
+            margin-bottom: 25px;
+
+            font-family: "Noto Serif JP", serif;
+        }
+
+        .about-text p {
+
+            line-height: 2.1;
+
+            color: #555;
+
+            margin-bottom: 20px;
+
+            font-size: 16px;
         }
 
         /* =========================
-   CARD
+   SPOT GRID
 ========================= */
 
-        .gallery-card {
+        .spot-grid {
 
-            background: white;
+            display: grid;
 
-            border-radius: 28px;
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 35px;
+        }
+
+        .spot-card {
+
+            background: #f8f5f1;
 
             overflow: hidden;
+
+            border-radius: 25px;
 
             box-shadow:
                 0 10px 30px rgba(0, 0, 0, 0.08);
@@ -207,26 +335,21 @@
             transition: 0.4s;
         }
 
-        .gallery-card:hover {
+        .spot-card:hover {
 
-            transform:
-                translateY(-10px);
+            transform: translateY(-10px);
         }
 
-        /* =========================
-   IMAGE
-========================= */
+        /* IMAGE */
 
-        .gallery-item {
+        .spot-image {
 
-            position: relative;
+            height: 230px;
 
             overflow: hidden;
-
-            height: 280px;
         }
 
-        .gallery-item img {
+        .spot-image img {
 
             width: 100%;
             height: 100%;
@@ -236,153 +359,252 @@
             transition: 0.5s;
         }
 
-        .gallery-item:hover img {
+        .spot-card:hover img {
 
             transform: scale(1.08);
         }
 
-        /* =========================
-   OVERLAY
-========================= */
+        /* CONTENT */
 
-        .overlay {
+        .spot-content {
+
+            padding: 35px 25px 45px;
+
+            text-align: center;
+
+            position: relative;
+        }
+
+        .spot-content::before {
+
+            content: "";
 
             position: absolute;
-            inset: 0;
 
-            background:
-                linear-gradient(to top,
-                    rgba(0, 0, 0, 0.85),
-                    rgba(0, 0, 0, 0.1));
+            top: 15px;
+            left: 15px;
 
-            display: flex;
+            width: 22px;
+            height: 22px;
 
-            flex-direction: column;
-
-            justify-content: flex-end;
-
-            padding: 25px;
-
-            opacity: 0;
-
-            transition: 0.4s;
+            border-top: 2px solid #d94a2f;
+            border-left: 2px solid #d94a2f;
         }
 
-        .gallery-item:hover .overlay {
+        .spot-content::after {
 
-            opacity: 1;
+            content: "";
+
+            position: absolute;
+
+            right: 15px;
+            bottom: 15px;
+
+            width: 22px;
+            height: 22px;
+
+            border-right: 2px solid #d94a2f;
+            border-bottom: 2px solid #d94a2f;
         }
 
-        .overlay h3 {
+        .spot-content h3 {
 
-            color: white;
+            font-size: 24px;
 
-            font-size: 30px;
+            margin-bottom: 18px;
 
-            margin-bottom: 10px;
+            font-family: "Noto Serif JP", serif;
         }
 
-        .overlay p {
-
-            color: #eee;
-        }
-
-        /* =========================
-   CAPTION
-========================= */
-
-        .gallery-caption {
-
-            padding: 25px;
+        .spot-content p {
 
             color: #666;
 
-            font-size: 15px;
-
             line-height: 1.9;
+
+            font-size: 14px;
+
+            margin-bottom: 0;
         }
 
-        /* =========================
-   INFO + MAP
-========================= */
+        /* MOBILE */
 
-        .info-map {
+        @media(max-width:1100px) {
 
-            display: grid;
+            .spot-grid {
 
-            grid-template-columns:
-                1fr 1.3fr;
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
 
-            gap: 40px;
-
-            align-items: stretch;
-
-            margin-bottom: 100px;
         }
 
-        .info-box {
+        @media(max-width:768px) {
 
-            background: white;
-
-            padding: 50px;
-
-            border-radius: 35px;
-
-            box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.08);
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: center;
-        }
-
-        .info-box h3 {
-
-            font-size: 42px;
-
-            margin-bottom: 30px;
-        }
-
-        .info-box p {
-
-            font-size: 18px;
-
-            color: #555;
-
-            margin-bottom: 25px;
-
-            line-height: 1.9;
-        }
-
-        .map-box iframe {
-
-            width: 100%;
-
-            height: 100%;
-
-            min-height: 450px;
-
-            border: none;
-
-            border-radius: 35px;
-
-            box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.08);
-        }
-
-        @media(max-width:900px) {
-
-            .info-map {
+            .spot-grid {
 
                 grid-template-columns: 1fr;
+            }
+
+            .spot-image {
+
+                height: 220px;
+            }
+
+            .spot-content h3 {
+
+                font-size: 28px;
             }
 
         }
 
         /* =========================
-   BUTTONS
+       MAP
+    ========================= */
+
+        .map-section iframe {
+
+            width: 100%;
+
+            height: 500px;
+
+            border: none;
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        /* =========================
+       FOOTER
+    ========================= */
+
+        footer {
+
+            background: #1d1713;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 80px 7%;
+        }
+
+        footer h2 {
+
+            font-size: 38px;
+
+            font-family: "Noto Serif JP", serif;
+
+            margin-bottom: 18px;
+        }
+
+        footer p {
+
+            color: #b9b1aa;
+
+            line-height: 2;
+        }
+
+        /* =========================
+       ANIMATION
+    ========================= */
+
+        .fade {
+
+            opacity: 0;
+
+            transform: translateY(30px);
+
+            transition: 1s;
+        }
+
+        .fade.show {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+        /* =========================
+       MOBILE
+    ========================= */
+
+        @media(max-width:1100px) {
+
+            .spot-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+        @media(max-width:768px) {
+
+            nav {
+
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+
+                gap: 18px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+            .hero-content h2 {
+
+                font-size: 58px;
+
+                line-height: 1.2;
+            }
+
+            .hero-content p {
+
+                font-size: 16px;
+            }
+
+            .section-title h2 {
+
+                font-size: 38px;
+            }
+
+            .about-image img {
+
+                height: 350px;
+            }
+
+            .spot-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .spot-image {
+
+                height: 220px;
+            }
+
+            .about-text {
+
+                padding: 35px 25px;
+            }
+
+            .spot-content h3,
+            .about-text h3 {
+
+                font-size: 30px;
+            }
+
+        }
+
+        /* =========================
+   PAGE NAVIGATION
 ========================= */
 
         .page-navigation {
@@ -391,310 +613,413 @@
 
             justify-content: center;
 
-            gap: 30px;
+            align-items: center;
+
+            gap: 25px;
 
             flex-wrap: wrap;
+
+            margin-top: 70px;
         }
+
+        /* BUTTON */
 
         .nav-btn {
 
+            position: relative;
+
+            display: inline-flex;
+
+            justify-content: center;
+            align-items: center;
+
             padding: 16px 38px;
 
-            border-radius: 50px;
+            min-width: 180px;
 
-            text-decoration: none;
-
-            font-size: 18px;
-
-            font-weight: bold;
-
-            color: white;
+            border-radius: 60px;
 
             background:
                 linear-gradient(135deg,
-                    #ff7aa2,
-                    #ff9fb7);
+                    #2b211b,
+                    #44352c);
 
-            box-shadow:
-                0 10px 25px rgba(255, 120, 160, 0.25);
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: 500;
+
+            letter-spacing: 1px;
+
+            overflow: hidden;
 
             transition: 0.4s;
+
+            box-shadow:
+                0 10px 25px rgba(0, 0, 0, 0.15);
         }
+
+        /* LIGHT EFFECT */
+
+        .nav-btn::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 0;
+            left: -120%;
+
+            width: 100%;
+            height: 100%;
+
+            background:
+                linear-gradient(120deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.25),
+                    transparent);
+
+            transition: 0.6s;
+        }
+
+        .nav-btn:hover::before {
+
+            left: 120%;
+        }
+
+        /* HOVER */
 
         .nav-btn:hover {
 
+            background:
+                linear-gradient(135deg,
+                    #d94a2f,
+                    #ff7a59);
+
             transform:
-                translateY(-5px) scale(1.05);
+                translateY(-5px) scale(1.04);
 
             box-shadow:
-                0 15px 35px rgba(255, 120, 160, 0.35);
+                0 18px 35px rgba(217, 74, 47, 0.35);
         }
 
-        /* =========================
-   FOOTER
-========================= */
+        /* ACTIVE */
 
-        footer {
+        .nav-btn:active {
 
-            margin-top: 120px;
-
-            background: white;
-
-            padding: 40px;
-
-            text-align: center;
-
-            color: #777;
-
-            border-top:
-                1px solid rgba(0, 0, 0, 0.05);
+            transform: scale(0.97);
         }
 
-        @media(max-width:900px) {
+        /* MOBILE */
 
-            .hero-text h1 {
+        @media(max-width:768px) {
 
-                font-size: 60px;
+            .page-navigation {
+
+                flex-direction: column;
+
+                gap: 18px;
             }
 
-            .hero-text p {
+            .nav-btn {
 
-                font-size: 18px;
-            }
+                width: 100%;
 
-            .description {
+                max-width: 320px;
 
-                padding: 40px;
-            }
+                padding: 15px 20px;
 
-            .description h2 {
-
-                font-size: 36px;
-            }
-
-            .quote h2 {
-
-                font-size: 28px;
+                font-size: 15px;
             }
 
         }
-        /* =========================
-   MOBILE RESPONSIVE
-========================= */
-
-@media (max-width: 768px){
-
-    body{
-        overflow-x:hidden;
-    }
-
-    section{
-        padding:70px 6%;
-    }
-
-    /* HERO */
-
-    .hero{
-        height:85vh;
-        background-position:center;
-    }
-
-    .hero-content h1{
-
-        font-size:52px;
-
-        letter-spacing:2px;
-
-        line-height:1.2;
-    }
-
-    .hero-content p{
-
-        font-size:16px;
-
-        padding:0 10px;
-    }
-
-    /* TITLE */
-
-    .title{
-        margin-bottom:45px;
-    }
-
-    .title h2{
-
-        font-size:34px;
-
-        line-height:1.4;
-    }
-
-    .title p{
-
-        font-size:15px;
-
-        line-height:1.9;
-    }
-
-    /* GRID */
-
-    .gallery{
-
-        grid-template-columns:1fr;
-
-        gap:25px;
-    }
-
-    .info-map{
-
-        grid-template-columns:1fr;
-    }
-
-    /* CARD */
-
-    .gallery-card{
-
-        border-radius:24px;
-    }
-
-    .gallery-card img{
-
-        height:220px;
-    }
-
-    .gallery-content{
-
-        padding:22px;
-    }
-
-    .gallery-content h3{
-
-        font-size:24px;
-    }
-
-    .gallery-content p{
-
-        font-size:15px;
-    }
-
-    /* INFO BOX */
-
-    .info-box{
-
-        padding:28px;
-    }
-
-    .info-box h3{
-
-        font-size:28px;
-    }
-
-    .info-box p{
-
-        font-size:15px;
-    }
-
-    /* MAP */
-
-    iframe{
-
-        height:320px;
-    }
-
-    /* BUTTON */
-
-    .page-navigation{
-
-        gap:15px;
-    }
-
-    .nav-btn{
-
-        width:100%;
-
-        text-align:center;
-
-        padding:14px 20px;
-
-        font-size:15px;
-    }
-
-    /* FOOTER */
-
-    footer{
-
-        padding:60px 6%;
-    }
-
-    footer h2{
-
-        font-size:28px;
-    }
-
-    footer p{
-
-        font-size:14px;
-    }
-
-}
     </style>
-   
 
 </head>
 
 <body>
 
-    <section class="hero">
-        <img src="image/42.jpg">
-        <div class="hero-text">
-            <h1>サンシャイン60</h1>
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo">
+
+            <div class="logo-box">
+                TK
+            </div>
+
+            <h1>東京案内書</h1>
+
         </div>
+
+        <ul>
+
+            <li><a href="#about">概要</a></li>
+            <li><a href="#spots">スポット</a></li>
+            <li><a href="#map">地図</a></li>
+
+        </ul>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content fade">
+
+            <h2>サンシャイン60</h2>
+
+            <p>
+                東京の絶景と夜景を楽しめる人気スポット
+            </p>
+
+        </div>
+
     </section>
 
-    <div class="container">
+    <!-- ABOUT -->
 
-        <div class="description">
-            <h2>🌇 サンシャイン60</h2>
-            <p>サンシャイン60（サンシャインろくじゅう、英称:Sunshine 60）は東京都豊島区東池袋にある超高層ビルです。</p>
-            <p>🌃 高層階から東京の景色を一望でき、夜景がとても美しいことで知られています。</p>
-            <p>📸 観光スポットとして人気があります。</p>
-            <p>✨ 東京の現代的な雰囲気を感じられます。</p>
-        </div>
+    <section id="about">
 
-        <section class="quote">
-            <h2>「東京は眠らない街だからこそ美しい。」</h2>
-        </section>
+        <div class="section-title fade">
 
-        <div class="gallery">
+            <h2>🌇 サンシャイン60について</h2>
 
-            <!-- giữ nguyên gallery của bạn (đã dịch ở trên) -->
+            <p>
+                東京のランドマーク
+            </p>
 
         </div>
 
-        <section class="info-map">
+        <div class="about">
 
-            <div class="info-box">
-                <h3>📍 情報</h3>
-                <p>🚌 池袋御嶽神社からサンシャイン60までは約10〜15分です。</p>
-                <p>🚶 合計約20〜30分です。</p>
-                <p>💴 約220円</p>
+            <div class="about-image fade">
+
+                <img src="image/42.jpg" alt="サンシャイン60">
+
             </div>
 
-            <div class="map-box">
-                <iframe src="https://www.google.com/maps?q=Sunshine+City+Tokyo&output=embed"></iframe>
+            <div class="about-text fade">
+
+                <h3>
+                    東京の美しい景色 ✨
+                </h3>
+
+                <p>
+
+                    サンシャイン60は
+                    池袋を代表する高層ビルです。
+
+                    展望台からは
+                    東京の景色を一望できます。
+
+                </p>
+
+                <p>
+
+                    夜になると
+                    美しいネオンと夜景が広がり、
+                    多くの観光客に人気があります。
+
+                </p>
+
             </div>
 
-        </section>
+        </div>
 
+    </section>
+
+    <!-- SPOTS -->
+
+    <section id="spots">
+
+        <div class="section-title fade">
+
+            <h2>✨ サンシャインエリア</h2>
+
+            <p>
+                人気スポットを楽しもう
+            </p>
+
+        </div>
+
+        <div class="spot-grid">
+
+            <!-- CARD 1 -->
+
+            <div class="spot-card fade">
+
+                <div class="spot-image">
+
+                    <img src="image/35.jpg" alt="展望台">
+
+                </div>
+
+                <div class="spot-content">
+
+                    <h3>🌃 天空の公園 イラストマップ</h3>
+
+                    <p>
+                        イラストレーター・ヨネムラ氏による作品。
+                        都会の中に広がる緑豊かな空間を、やさしく洗練されたタッチで描いています。
+                        散歩道や展望スポットを通して、空の上に浮かぶ公園のような特別な景色を楽しめます。
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="spot-card fade">
+
+                <div class="spot-image">
+
+                    <img src="image/15.jpg" alt="レストラン">
+
+                </div>
+
+                <div class="spot-content">
+
+                    <h3> 🌸サンシャイン60 桜フェスティバル</h3>
+
+                    <p>
+                        Sunshine 60で、東京の春を楽しめる桜イベントです。
+                        夜景と桜が合わさり、池袋の都会的でロマンチックな雰囲気を感じることができます。
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="spot-card fade">
+
+                <div class="spot-image">
+
+                    <img src="image/16.jpg" alt="ショップ">
+
+                </div>
+
+                <div class="spot-content">
+
+                    <h3>🎹ピアノ演奏 </h3>
+
+                    <p>
+                        Sunshine 60では、美しい夜景とともにピアノ演奏を楽しむことができます。
+                        幻想的な音楽と東京の景色が合わさり、特別で落ち着いた空間を演出します。
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 4 -->
+
+            <div class="spot-card fade">
+
+                <div class="spot-image">
+
+                    <img src="image/18.jpg" alt="夜景">
+
+                </div>
+
+                <div class="spot-content">
+
+                    <h3>🗺️展望案内マップ</h3>
+
+                    <p>
+                        Sunshine 60の案内マップでは、展望台から東京の有名な景色をわかりやすく見ることができます。
+                        あなたは、美しい東京のパノラマ景色を楽しみながら、
+                        さまざまなスポットを発見できます。
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MAP -->
+
+    <section class="map-section" id="map">
+
+        <div class="section-title fade">
+
+            <h2>🗺 マップ</h2>
+
+            <p>
+                サンシャイン60の場所
+            </p>
+
+        </div>
+
+        <iframe src="https://www.google.com/maps?q=Sunshine+City+Tokyo&output=embed">
+
+        </iframe>
         <div class="page-navigation">
-            <a href="ikebukuro.html" class="nav-btn">⬅ 戻る</a>
-            <a href="anime.html" class="nav-btn">次へ ➜</a>
+
+            <a href="index.html" class="nav-btn">
+
+                ホーム
+
+            </a>
+
+            <a href="mejiro.html" class="nav-btn">
+
+                次へ ➜
+
+            </a>
+
         </div>
 
-    </div>
+    </section>
+
+    <!-- FOOTER -->
 
     <footer>
-        <p>© 東京旅行ガイド</p>
+
+        <h2>東京案内書</h2>
+
+        <p>
+
+            サンシャイン60 ガイドサイト<br>
+            Tokyo Travel Project
+
+        </p>
+
     </footer>
+
+    <script>
+
+        const fadeElements =
+            document.querySelectorAll(".fade");
+
+        window.addEventListener("scroll", () => {
+
+            fadeElements.forEach(el => {
+
+                if (
+                    el.getBoundingClientRect().top
+                    <
+                    window.innerHeight - 100
+                ) {
+
+                    el.classList.add("show");
+
+                }
+
+            });
+
+        });
+
+    </script>
 
 </body>
 

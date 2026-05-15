@@ -19,14 +19,10 @@
         href="https://fonts.gstatic.com"
         crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@400;500;700&display=swap"
         rel="stylesheet">
 
   <style>
-
-    /* =========================
-       RESET
-    ========================= */
 
     *{
       margin:0;
@@ -39,24 +35,14 @@
 
       font-family:
       "Poppins",
-      "Noto Sans JP",
       sans-serif;
 
-      background:#f8f4f2;
+      background:
+      #f6f1eb;
+
+      color:#2a221d;
 
       overflow-x:hidden;
-
-      color:#222;
-
-      min-height:100vh;
-
-      display:flex;
-
-      flex-direction:column;
-    }
-
-    main{
-      flex:1;
     }
 
     img{
@@ -69,22 +55,7 @@
     }
 
     section{
-      padding:110px 10%;
-    }
-
-    /* =========================
-       SCROLLBAR
-    ========================= */
-
-    ::-webkit-scrollbar{
-      width:10px;
-    }
-
-    ::-webkit-scrollbar-thumb{
-
-      background:#ffc9d9;
-
-      border-radius:20px;
+      padding:110px 8%;
     }
 
     /* =========================
@@ -96,10 +67,11 @@
       position:fixed;
 
       top:0;
+      left:0;
 
       width:100%;
 
-      padding:20px 10%;
+      padding:22px 8%;
 
       display:flex;
 
@@ -108,23 +80,50 @@
       align-items:center;
 
       background:
-      rgba(255,248,250,0.72);
+      rgba(246,241,235,0.85);
 
-      backdrop-filter:blur(18px);
-
-      border-bottom:
-      1px solid rgba(255,183,210,0.12);
+      backdrop-filter:blur(15px);
 
       z-index:1000;
+
+      border-bottom:
+      1px solid rgba(0,0,0,0.05);
     }
 
-    nav h1{
+    .logo{
 
-      color:#2b2b2b;
+      display:flex;
 
-      font-size:28px;
+      align-items:center;
 
-      font-weight:700;
+      gap:15px;
+    }
+
+    .logo-box{
+
+      width:52px;
+      height:52px;
+
+      background:#d85c42;
+
+      color:white;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      font-size:24px;
+
+      font-family:"Noto Serif JP", serif;
+    }
+
+    .logo h1{
+
+      font-size:32px;
+
+      font-family:"Noto Serif JP", serif;
+
+      letter-spacing:3px;
     }
 
     nav ul{
@@ -133,21 +132,21 @@
 
       list-style:none;
 
-      gap:30px;
+      gap:40px;
     }
 
-    nav a{
+    nav ul li a{
 
       color:#444;
 
-      font-weight:500;
+      font-size:16px;
 
       transition:0.3s;
     }
 
-    nav a:hover{
+    nav ul li a:hover{
 
-      color:#ff9fbe;
+      color:#d85c42;
     }
 
     /* =========================
@@ -160,10 +159,10 @@
 
       background:
       linear-gradient(
-        rgba(20,20,20,0.18),
-        rgba(20,20,20,0.42)
+      rgba(0,0,0,0.28),
+      rgba(0,0,0,0.45)
       ),
-      url("image/43.jpg")
+      url("image/66.jpg")
       center/cover;
 
       display:flex;
@@ -175,61 +174,77 @@
       text-align:center;
 
       color:white;
+
+      padding:0 8%;
     }
 
     .hero-content h2{
 
-      font-size:100px;
+      font-size:95px;
 
       letter-spacing:8px;
 
-      margin-bottom:20px;
+      margin-bottom:25px;
 
-      text-shadow:
-      0 0 30px rgba(255,255,255,0.18);
+      font-family:"Noto Serif JP", serif;
     }
 
     .hero-content p{
 
-      font-size:24px;
+      font-size:22px;
 
-      color:#f5f5f5;
+      line-height:2;
+
+      margin-bottom:35px;
+    }
+
+    .hero-btn{
+
+      display:inline-block;
+
+      padding:16px 42px;
+
+      border-radius:50px;
+
+      background:#2a221d;
+
+      color:white;
+
+      transition:0.4s;
+    }
+
+    .hero-btn:hover{
+
+      background:#d85c42;
+
+      transform:translateY(-4px);
     }
 
     /* =========================
-       TITLE
+       SECTION TITLE
     ========================= */
 
-    .title{
+    .section-title{
 
       text-align:center;
 
       margin-bottom:70px;
     }
 
-    .title h2{
+    .section-title h2{
 
-      font-size:50px;
+      font-size:52px;
+
+      font-family:"Noto Serif JP", serif;
 
       margin-bottom:15px;
-
-      background:
-      linear-gradient(
-        45deg,
-        #444,
-        #ff9fbe
-      );
-
-      -webkit-background-clip:text;
-
-      -webkit-text-fill-color:transparent;
     }
 
-    .title p{
+    .section-title p{
 
-      color:#888;
+      color:#7c7066;
 
-      font-size:18px;
+      font-size:17px;
     }
 
     /* =========================
@@ -248,12 +263,25 @@
       align-items:center;
     }
 
-    .about img{
+    .about-image{
 
-      border-radius:28px;
+      overflow:hidden;
 
-      box-shadow:
-      0 10px 35px rgba(255,183,210,0.12);
+      border-radius:30px;
+    }
+
+    .about-image img{
+
+      height:520px;
+
+      object-fit:cover;
+
+      transition:0.5s;
+    }
+
+    .about-image:hover img{
+
+      transform:scale(1.05);
     }
 
     .about-text h3{
@@ -261,13 +289,15 @@
       font-size:42px;
 
       margin-bottom:25px;
+
+      font-family:"Noto Serif JP", serif;
     }
 
     .about-text p{
 
-      color:#666;
+      line-height:2.1;
 
-      line-height:2;
+      color:#5d5148;
 
       font-size:17px;
 
@@ -275,121 +305,100 @@
     }
 
     /* =========================
-       PLACE
+       SPOT GRID
     ========================= */
 
-    .place{
+    .spot-grid{
 
       display:grid;
 
       grid-template-columns:
-      repeat(auto-fit,minmax(320px,1fr));
+      repeat(2,1fr);
 
-      gap:50px;
-
-      align-items:center;
-
-      margin-bottom:120px;
-
-      background:
-      rgba(255,255,255,0.72);
-
-      backdrop-filter:blur(12px);
-
-      padding:35px;
-
-      border-radius:35px;
-
-      border:
-      1px solid rgba(255,183,210,0.10);
-
-      box-shadow:
-      0 10px 35px rgba(0,0,0,0.06);
-
-      transition:0.45s;
+      gap:35px;
     }
 
-    .place:hover{
+    .spot-card{
 
-      transform:
-      translateY(-8px);
+      background:white;
+
+      border-radius:28px;
+
+      overflow:hidden;
+
+      transition:0.4s;
 
       box-shadow:
-      0 15px 45px rgba(255,183,210,0.16);
+      0 10px 25px rgba(0,0,0,0.06);
     }
 
-    .place img{
+    .spot-card:hover{
 
-      border-radius:25px;
+      transform:translateY(-8px);
+    }
 
-      height:420px;
+    .spot-image{
+
+      height:280px;
+
+      overflow:hidden;
+    }
+
+    .spot-image img{
+
+      height:100%;
 
       object-fit:cover;
 
       transition:0.5s;
-
-      filter:
-      brightness(0.97)
-      contrast(1.02);
     }
 
-    .place img:hover{
+    .spot-card:hover img{
 
-      transform:scale(1.03);
+      transform:scale(1.08);
     }
 
-    .place-content h3{
+    .spot-content{
 
-      font-size:42px;
-
-      margin-bottom:25px;
+      padding:35px;
     }
 
-    .place-content p{
+    .spot-content h3{
+
+      font-size:34px;
+
+      margin-bottom:18px;
+
+      font-family:"Noto Serif JP", serif;
+    }
+
+    .spot-content p{
 
       color:#666;
 
       line-height:2;
 
-      margin-bottom:30px;
-
-      font-size:17px;
+      margin-bottom:28px;
     }
-
-    /* =========================
-       BUTTON
-    ========================= */
 
     .btn{
 
       display:inline-block;
 
-      padding:15px 38px;
+      padding:14px 34px;
 
       border-radius:50px;
 
+      background:#2a221d;
+
       color:white;
-
-      background:
-      linear-gradient(
-        45deg,
-        #ff9fbe,
-        #ffc9d9
-      );
-
-      box-shadow:
-      0 5px 20px rgba(255,183,210,0.22);
 
       transition:0.4s;
     }
 
     .btn:hover{
 
-      transform:
-      translateY(-4px);
-
-      box-shadow:
-      0 8px 30px rgba(255,183,210,0.35);
+      background:#d85c42;
     }
 
     /* =========================
@@ -407,7 +416,7 @@
       border-radius:28px;
 
       box-shadow:
-      0 10px 35px rgba(255,183,210,0.12);
+      0 10px 30px rgba(0,0,0,0.08);
     }
 
     /* =========================
@@ -416,82 +425,37 @@
 
     .page-navigation{
 
-      width:90%;
-
-      max-width:1200px;
-
-      margin:70px auto;
-
       display:flex;
 
       justify-content:center;
 
-      gap:30px;
+      gap:25px;
 
       flex-wrap:wrap;
+
+      margin-top:70px;
     }
 
     .nav-btn{
-
-      position:relative;
 
       padding:16px 38px;
 
       border-radius:50px;
 
-      font-size:18px;
-
-      font-weight:bold;
+      background:#d85c42;
 
       color:white;
 
-      background:
-      linear-gradient(
-        45deg,
-        #ff9fbe,
-        #ffc9d9
-      );
+      font-weight:600;
 
-      box-shadow:
-      0 5px 20px rgba(255,183,210,0.20);
-
-      transition:0.35s ease;
-
-      overflow:hidden;
-    }
-
-    .nav-btn::before{
-
-      content:"";
-
-      position:absolute;
-
-      top:0;
-
-      left:-100%;
-
-      width:100%;
-
-      height:100%;
-
-      background:
-      rgba(255,255,255,0.2);
-
-      transform:skewX(-25deg);
-
-      transition:0.6s;
-    }
-
-    .nav-btn:hover::before{
-
-      left:120%;
+      transition:0.4s;
     }
 
     .nav-btn:hover{
 
-      transform:
-      translateY(-5px)
-      scale(1.03);
+      transform:translateY(-5px);
+
+      background:#2a221d;
     }
 
     /* =========================
@@ -500,29 +464,29 @@
 
     footer{
 
-      background:#f3ece8;
+      background:#1f1915;
 
-      color:#333;
+      color:white;
 
       text-align:center;
 
-      padding:80px 10%;
-
-      margin-top:auto;
+      padding:80px 8%;
     }
 
     footer h2{
 
-      font-size:35px;
+      font-size:38px;
 
-      margin-bottom:20px;
+      margin-bottom:18px;
+
+      font-family:"Noto Serif JP", serif;
     }
 
     footer p{
 
-      color:#777;
+      color:#bdb3ac;
 
-      line-height:1.8;
+      line-height:2;
     }
 
     /* =========================
@@ -549,183 +513,86 @@
        MOBILE
     ========================= */
 
-    @media(max-width:768px){
+    @media(max-width:1100px){
 
-      nav ul{
-        gap:15px;
+      .spot-grid{
+
+        grid-template-columns:1fr;
       }
 
-      section{
-        padding:80px 5%;
+    }
+
+    @media(max-width:768px){
+
+      nav{
+
+        flex-direction:column;
+
+        gap:20px;
+      }
+
+      nav ul{
+
+        gap:18px;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
       }
 
       .hero-content h2{
-        font-size:60px;
-      }
 
-      .place{
-        padding:20px;
-      }
-
-    }
-    /* =========================
-   MOBILE RESPONSIVE
-========================= */
-
-@media (max-width: 768px){
-
-    body{
-        overflow-x:hidden;
-    }
-
-    section{
-        padding:70px 6%;
-    }
-
-    /* HERO */
-
-    .hero{
-        height:85vh;
-        background-position:center;
-    }
-
-    .hero-content h1{
-
-        font-size:52px;
-
-        letter-spacing:2px;
+        font-size:58px;
 
         line-height:1.2;
-    }
+      }
 
-    .hero-content p{
+      .hero-content p{
 
         font-size:16px;
+      }
 
-        padding:0 10px;
-    }
+      .section-title h2{
 
-    /* TITLE */
+        font-size:38px;
+      }
 
-    .title{
-        margin-bottom:45px;
-    }
+      .about-image img{
 
-    .title h2{
+        height:360px;
+      }
 
-        font-size:34px;
+      .spot-image{
 
-        line-height:1.4;
-    }
+        height:240px;
+      }
 
-    .title p{
+      .spot-content{
 
-        font-size:15px;
+        padding:25px;
+      }
 
-        line-height:1.9;
-    }
-
-    /* GRID */
-
-    .gallery{
-
-        grid-template-columns:1fr;
-
-        gap:25px;
-    }
-
-    .info-map{
-
-        grid-template-columns:1fr;
-    }
-
-    /* CARD */
-
-    .gallery-card{
-
-        border-radius:24px;
-    }
-
-    .gallery-card img{
-
-        height:220px;
-    }
-
-    .gallery-content{
-
-        padding:22px;
-    }
-
-    .gallery-content h3{
-
-        font-size:24px;
-    }
-
-    .gallery-content p{
-
-        font-size:15px;
-    }
-
-    /* INFO BOX */
-
-    .info-box{
-
-        padding:28px;
-    }
-
-    .info-box h3{
+      .spot-content h3{
 
         font-size:28px;
-    }
+      }
 
-    .info-box p{
+      .spot-content p{
 
         font-size:15px;
-    }
+      }
 
-    /* MAP */
-
-    iframe{
+      .map-section iframe{
 
         height:320px;
+      }
+
+      footer h2{
+
+        font-size:30px;
+      }
+
     }
-
-    /* BUTTON */
-
-    .page-navigation{
-
-        gap:15px;
-    }
-
-    .nav-btn{
-
-        width:100%;
-
-        text-align:center;
-
-        padding:14px 20px;
-
-        font-size:15px;
-    }
-
-    /* FOOTER */
-
-    footer{
-
-        padding:60px 6%;
-    }
-
-    footer h2{
-
-        font-size:28px;
-    }
-
-    footer p{
-
-        font-size:14px;
-    }
-
-}
 
   </style>
 
@@ -733,122 +600,143 @@
 
 <body>
 
-<main>
+<!-- NAVBAR -->
 
-  <!-- NAVBAR -->
+<nav>
 
-  <nav>
+  <div class="logo">
+
+    <div class="logo-box">
+      MJ
+    </div>
 
     <h1>東京案内書</h1>
 
-    <ul>
+  </div>
 
-      <li>
-        <a href="#about">概要</a>
-      </li>
+  <ul>
 
-      <li>
-        <a href="#spots">スポット</a>
-      </li>
+    <li>
+      <a href="#about">概要</a>
+    </li>
 
-      <li>
-        <a href="#map">地図</a>
-      </li>
+    <li>
+      <a href="#spots">スポット</a>
+    </li>
 
-    </ul>
+    <li>
+      <a href="#map">地図</a>
+    </li>
 
-  </nav>
+  </ul>
 
-  <!-- HERO -->
+</nav>
 
-  <section class="hero">
+<!-- HERO -->
 
-    <div class="hero-content fade">
+<section class="hero">
 
-      <h2>メジロ</h2>
+  <div class="hero-content fade">
+
+    <h2>MEJIRO</h2>
+
+    <p>
+      静かな東京と自然の美しさ
+    </p>
+
+    <a href="#spots"
+       class="hero-btn">
+
+      もっと見る
+
+    </a>
+
+  </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <div class="section-title fade">
+
+    <h2>🌿 目白について</h2>
+
+    <p>
+      東京の静かで美しいエリア
+    </p>
+
+  </div>
+
+  <div class="about">
+
+    <div class="about-image fade">
+
+      <img src="image/43.jpg">
+
+    </div>
+
+    <div class="about-text fade">
+
+      <h3>
+        メジロへようこそ 🌸
+      </h3>
 
       <p>
-        静かな東京と自然の美しさ
+
+        メジロは東京の中でも
+        静かで落ち着いた雰囲気がある街です。
+
+        美しい庭園やカフェ、
+        公園などがあり、
+        ゆっくり散歩を楽しめます。
+
+      </p>
+
+      <p>
+
+        池袋から近いですが、
+        都会とは違う穏やかな魅力があります。
+
+        静かな東京を感じたい人に
+        おすすめです。
+
       </p>
 
     </div>
 
-  </section>
+  </div>
 
-  <!-- ABOUT -->
+</section>
 
-  <section id="about">
+<!-- SPOTS -->
 
-    <div class="title fade">
+<section id="spots">
 
-      <h2>🌿 目白について</h2>
+  <div class="section-title fade">
 
-      <p>
-        東京の静かで美しいエリア
-      </p>
+    <h2>✨ 人気スポット</h2>
 
-    </div>
+    <p>
+      メジロの美しい場所
+    </p>
 
-    <div class="about">
+  </div>
 
-      <img src="image/43.jpg"
-           class="fade">
+  <div class="spot-grid">
 
-      <div class="about-text fade">
+    <!-- CARD 1 -->
 
-        <h3>
-          メジロへようこそ 🌸
-        </h3>
+    <div class="spot-card fade">
 
-        <p>
+      <div class="spot-image">
 
-          メジロは東京の中でも
-          静かで落ち着いた雰囲気がある街です。
-
-          美しい庭園やカフェ、
-          公園などがあり、
-          ゆっくり散歩を楽しめます。
-
-        </p>
-
-        <p>
-
-          池袋から近いですが、
-          都会とは違う穏やかな魅力があります。
-
-          静かな東京を感じたい人に
-          おすすめです。
-
-        </p>
+        <img src="image/27.jpg">
 
       </div>
 
-    </div>
-
-  </section>
-
-  <!-- SPOTS -->
-
-  <section id="spots">
-
-    <div class="title fade">
-
-      <h2>✨ 人気スポット</h2>
-
-      <p>
-        メジロの美しい場所
-      </p>
-
-    </div>
-
-    <!-- GARDEN -->
-
-    <div class="place">
-
-      <img src="image/27.jpg"
-           class="fade">
-
-      <div class="place-content fade">
+      <div class="spot-content">
 
         <h3>🌳 目白庭園</h3>
 
@@ -872,11 +760,17 @@
 
     </div>
 
-    <!-- UNIVERSITY -->
+    <!-- CARD 2 -->
 
-    <div class="place">
+    <div class="spot-card fade">
 
-      <div class="place-content fade">
+      <div class="spot-image">
+
+        <img src="image/44.jpg">
+
+      </div>
+
+      <div class="spot-content">
 
         <h3>🏫 学習院大学</h3>
 
@@ -898,35 +792,32 @@
 
       </div>
 
-      <img src="image/44.jpg"
-           class="fade">
-
     </div>
 
-  </section>
+  </div>
 
-  <!-- MAP -->
+</section>
 
-  <section class="map-section"
-           id="map">
+<!-- MAP -->
 
-    <div class="title fade">
+<section class="map-section"
+         id="map">
 
-      <h2>🗺 メジロ地図</h2>
+  <div class="section-title fade">
 
-      <p>
-        静かなエリアを探索
-      </p>
+    <h2>🗺 メジロ地図</h2>
 
-    </div>
+    <p>
+      静かなエリアを探索
+    </p>
 
-    <iframe src="https://www.google.com/maps?q=Mejiro+Tokyo&output=embed">
+  </div>
 
-    </iframe>
+  <iframe src="https://www.google.com/maps?q=Mejiro+Tokyo&output=embed">
 
-  </section>
+  </iframe>
 
-  <!-- PAGE NAV -->
+  <!-- NAVIGATION -->
 
   <div class="page-navigation">
 
@@ -946,7 +837,7 @@
 
   </div>
 
-</main>
+</section>
 
 <!-- FOOTER -->
 
